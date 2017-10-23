@@ -1,0 +1,25 @@
+#hero-header  {
+    font-size: 4em; 
+    font-weight: normal; 
+    margin-bottom: 0;
+    margin-top: 3em; 
+}
+
+#hero-sub-header {
+    font-size: 1.7em; 
+    font-weight: normal ;
+}
+
+#header-segment {
+    min-height: 700px; 
+    padding: 1em 0em;
+}
+
+#skills-segment {
+    padding: 0em;
+}
+
+#skills-header > .column.skills-column {
+    padding-bottom: 5em; 
+    padding-top: 5em; 
+}

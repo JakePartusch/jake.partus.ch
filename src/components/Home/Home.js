@@ -11,8 +11,7 @@ import {
   Menu,
   Segment,
   Visibility,
-} from 'semantic-ui-react'
-
+} from 'semantic-ui-react';
 
 export default class Home extends Component {
   state = {}
@@ -22,41 +21,43 @@ export default class Home extends Component {
     return (
       <div>
         <Segment
-        inverted
-        textAlign='center'
-        style={{ minHeight: 700, padding: '1em 0em' }}
-        vertical
-        >
-        <Container text>
-            <Header
-            as='h1'
-            content='Jake Partusch'
             inverted
-            style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
-            />
-            <Header
-            as='h2'
-            content='Full-stack Developer. Dog-father, traveler, brewmaster.'
-            inverted
-            style={{ fontSize: '1.7em', fontWeight: 'normal' }}
-            />
-        </Container>
+            textAlign='center'
+            id="header-segment"
+            vertical>
+            <Container text>
+                <Header
+                    id="hero-header"
+                    as='h1'
+                    content='Jake Partusch'
+                    inverted
+                />
+                <Header
+                    as='h2'
+                    content='Full-stack Developer. Dog-father, traveler, brewmaster.'
+                    inverted
+                    id="hero-sub-header"
+                />
+            </Container>
         </Segment>
-        <Segment style={{ padding: '0em' }} vertical>
-          <Grid celled='internally' columns='equal' stackable>
-            <Grid.Row textAlign='center'>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>Frontend</Header>
-                <p style={{ fontSize: '1.33em' }}>Logos</p>
-              </Grid.Column>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>Backend</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Logos
-                </p>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+        <Segment 
+            id="skills-header" 
+            vertical>
+            <Grid 
+                celled='internally' 
+                columns='equal' 
+                stackable>
+                <Grid.Row textAlign='center'>
+                    <Grid.Column className="skills-column">
+                        <Header as='h3' style={{ fontSize: '2em' }}>Frontend</Header>
+                        <p style={{ fontSize: '1.33em' }}>Logos</p>
+                    </Grid.Column>
+                    <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                        <Header as='h3' style={{ fontSize: '2em' }}>Backend</Header>
+                        <p style={{ fontSize: '1.33em' }}>Logos</p>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
         </Segment>
 
         <Segment style={{ padding: '4em 0em' }} vertical>

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Container } from 'semantic-ui-react';
 
 // Styles
-import '../scss/main.scss'
+import './index.css';
+import 'semantic-ui-css/semantic.css';
 
 export default class IndexLayout extends React.Component {
   static propTypes = {
