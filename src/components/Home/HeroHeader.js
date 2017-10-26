@@ -3,6 +3,7 @@ import {
   Container,
   Header,
   Segment,
+  Image
 } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 
@@ -11,11 +12,14 @@ const HeroSegment = glamorous.div({
     padding: '1em 0em'
 });
 
-const HeroHeading = glamorous.h1({
-    fontSize: '4em !important', 
-    fontWeight: 'normal !important', 
-    marginBottom: '0 !important',
-    marginTop: '3em !important' 
+const HeroHeading = glamorous.div({
+    marginBottom: '0',
+    marginTop: '8em' 
+});
+
+const NameHeader = glamorous.h1({
+    fontSize: '4em', 
+    fontWeight: 'normal', 
 });
 
 const HeroSubHeading = glamorous.h2({
@@ -33,16 +37,11 @@ export default class HeroHeader extends Component {
                 textAlign='center'
                 vertical>
                 <Container text>
-                    <Header
-                        as={HeroHeading}
-                        content='Jake Partusch'
-                        inverted
-                    />
-                    <Header
-                        as={HeroSubHeading}
-                        content='Full-stack Developer. Dog-father, traveler, brewmaster.'
-                        inverted
-                    />
+                    <HeroHeading>
+                        <Image shape='circular' size={"small"} centered src={"https://objectpartners.com/wp-content/uploads/2016/01/jakepartusch-headshot-square.jpg"}/>
+                        <NameHeader>Jake Partusch</NameHeader>
+                    </HeroHeading>
+                    <HeroSubHeading>Full-Stack Developer. Traveler. Brewer. Golden retriever lover.</HeroSubHeading>
                 </Container>
             </Segment>
         )
