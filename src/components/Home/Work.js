@@ -37,16 +37,22 @@ export default class Work extends Component {
                     A website developed in React that calculates the record of a team regardless of individual weekly matchups.
                 </WorkParagraph>
                 <Button.Group>
-                    <Button>Code</Button>
+                    <a href="https://github.com/JakePartusch/fantasy-football-power-rankings">
+                        <Button>Code</Button>
+                    </a>
                     <Button.Or />
-                    <Button primary>Site</Button>
+                    <a href="https://www.fantasy-football-power-rankings.com/">
+                        <Button primary>Site</Button>
+                    </a>
                 </Button.Group>
                 <Divider/>
                 <Header as={WorkHeader}>Wulf's Custom Welding</Header>
                 <WorkParagraph>
                     A website developed in React that calculates the record of a team regardless of individual weekly matchups.
                 </WorkParagraph>
-                <Button primary>Site</Button>
+                <a href="https://wulfscustomwelding.com/">
+                    <Button primary>Site</Button>
+                </a>
             </Container>
         </Segment>
         )
