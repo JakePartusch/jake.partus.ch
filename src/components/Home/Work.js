@@ -62,7 +62,7 @@ export default class Work extends Component {
                 <Divider/>
                 <Header as={WorkHeader}>Wulf's Custom Welding</Header>
                 <WorkParagraph>
-                    A website developed in React that calculates the record of a team regardless of individual weekly matchups.
+                    A Wordpress site built for a local company.
                 </WorkParagraph>
                 <a href="https://wulfscustomwelding.com/">
                     <Button primary>Site</Button>
