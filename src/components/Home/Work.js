@@ -45,6 +45,20 @@ export default class Work extends Component {
                         <Button primary>Site</Button>
                     </a>
                 </Button.Group>
+                <Divider />
+                <Header as={WorkHeader}>Garmin Node API</Header>
+                <WorkParagraph>
+                    An npm package for retrieving steps and other data from a Garmin Connect account
+                </WorkParagraph>
+                <Button.Group>
+                    <a href="https://github.com/JakePartusch/garmin-node-api">
+                        <Button>Code</Button>
+                    </a>
+                    <Button.Or />
+                    <a href="https://www.npmjs.com/package/garmin-node-api">
+                        <Button primary>Site</Button>
+                    </a>
+                </Button.Group>
                 <Divider/>
                 <Header as={WorkHeader}>Wulf's Custom Welding</Header>
                 <WorkParagraph>
