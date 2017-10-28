@@ -2,9 +2,9 @@ const autoprefixer = require('autoprefixer')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gromsby Demo',
+    title: 'Jake Partusch',
   },
-  pathPrefix: '/gatsby-starter-grommet',
+  pathPrefix: '/',
   plugins: [],
 }
 

@@ -1,11 +1,8 @@
 {
-  "name": "gatsby-starter-grommet",
-  "description": "Gatsby starter with the Grommet design system",
+  "name": "jake-partusch-website",
+  "description": "A personal website",
   "version": "1.0.0",
-  "author": "Aaron Lampros <alampros@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/alampros/gatsby-starter-grommet/issues"
-  },
+  "author": "Jake Partusch",
   "scripts": {
     "dev": "gatsby develop",
     "develop": "gatsby develop",
@@ -21,7 +18,6 @@
     "gatsby-link": "^1.3.2",
     "glamor": "^2.20.40",
     "glamorous": "^4.10.0",
-    "grommet": "^1.5.0",
     "node-sass": "^4.5.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -33,15 +29,10 @@
   "devDependencies": {
     "gh-pages": "^1.0.0"
   },
-  "homepage": "https://github.com/alampros/gatsby-starter-grommet#readme",
-  "keywords": [
-    "gatsby",
-    "starter",
-    "gatsby-starter"
-  ],
+  "homepage": "https://jake.partus.ch",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alampros/gatsby-starter-grommet.git"
+    "url": "git+https://github.com/JakePartusch/website.git"
   }
 }
