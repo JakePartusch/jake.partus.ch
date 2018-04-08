@@ -17,7 +17,9 @@ export default class Home extends Component {
         <Skills
          {...this.props}
         />
-        <Work/>
+        <Work
+          projects={this.props.projects}
+        />
         <Footer/>
       </HomePage>
     )

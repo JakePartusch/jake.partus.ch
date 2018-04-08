@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import glamorous from 'glamorous';
 
 const WorkSegment = glamorous.div({
-    padding: '4em 0em !important'
+    padding: '4em 0 4em 0',
+    maxWidth: '1000px',
+    margin: 'auto'
 });
 
 const WorkContainer = glamorous.div({
@@ -29,7 +31,7 @@ const Card = glamorous.div({
     width: '250px',
     height: '300px',
     boxShadow: '2px 1px 6px 0px #666',
-    margin: '2em',
+    margin: '1em',
     padding: '1em'
 })
 
@@ -43,7 +45,7 @@ const CardHeader = glamorous.h2({
 
 const CardSubHeader = glamorous.h2({
     color: '#1a1a1a',
-    fontSize: '16px',
+    fontSize: '18px',
     margin: '0.25em, 0'
 });
 
@@ -87,53 +89,26 @@ const CardFooter = glamorous.div({
 
 
 export default class Work extends Component {
-
     render() {
         return (
         <WorkSegment>
             <WorkContainer>
-                <Card>
-                    <CardBody>
-                        <CardHeader>Fantasy Football Power Rankings</CardHeader>
-                        <Divider/>
-                        <CardSubHeader>A website developed in React that calculates the record of a team regardless of individual weekly matchups.</CardSubHeader>
-                    </CardBody>
-                    <CardFooter>
-                        <Divider/>
-                        <ButtonGroup>
-                            <a href="https://www.fantasy-football-power-rankings.com/"> <Button inverted>Site</Button></a>
-                            <a href="https://github.com/JakePartusch/fantasy-football-power-rankings"><Button>Source</Button></a>
-                        </ButtonGroup>
-                    </CardFooter>
-                </Card>
-                <Card>
-                    <CardBody>
-                        <CardHeader>Garmin Node API</CardHeader>
-                        <Divider/>
-                        <CardSubHeader>An npm package for retrieving steps and other data from a Garmin Connect account.</CardSubHeader>
-                    </CardBody>
-                    <CardFooter>
-                        <Divider/>
-                        <ButtonGroup>
-                            <a href="https://www.npmjs.com/package/garmin-node-api"><Button inverted>Site</Button></a>
-                            <a href="https://github.com/JakePartusch/garmin-node-api"><Button>Source</Button></a>
-                        </ButtonGroup>
-                    </CardFooter>
-                </Card>
-                <Card>
-                    <CardBody>
-                        <CardHeader>Villa Springs Website</CardHeader>
-                        <Divider/>
-                        <CardSubHeader>A website developed with Hugo for a local neighborhood community.</CardSubHeader>
-                    </CardBody>
-                    <CardFooter>
-                        <Divider/>
-                        <ButtonGroup>
-                            <a href="https://villaspringslake.com/"><Button inverted>Site</Button></a>
-                            <a href="https://github.com/JakePartusch/villa-springs-website"><Button>Source</Button></a>
-                        </ButtonGroup>
-                    </CardFooter>
-                </Card>
+                {this.props.projects.map(project => 
+                    <Card>
+                        <CardBody>
+                            <CardHeader>{project.title}</CardHeader>
+                            <Divider/>
+                            <CardSubHeader>{project.content}</CardSubHeader>
+                        </CardBody>
+                        <CardFooter>
+                            <Divider/>
+                            <ButtonGroup>
+                                {project.siteLink && <a href={project.siteLink}> <Button inverted>Site</Button></a>}
+                                <a href={project.sourceLink}><Button>Source</Button></a>
+                            </ButtonGroup>
+                        </CardFooter>
+                    </Card>
+                )}
             </WorkContainer>
         </WorkSegment>
         )
