@@ -8,27 +8,24 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "clean": "git clean -xfd .cache public/",
-    "serve": "yarn run clean && yarn run build && gatsby serve",
-    "deploy": "yarn run build -- --prefix-paths && gh-pages -d public"
+    "serve": "yarn run clean && yarn run build && gatsby serve"
   },
   "dependencies": {
-    "autoprefixer": "^7.1.2",
-    "gatsby": "^1.1.0",
-    "gatsby-link": "^1.3.2",
+    "gatsby": "^1.9.246",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.29",
     "gatsby-transformer-sharp": "^1.6.22",
     "glamor": "^2.20.40",
-    "glamorous": "^4.10.0",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "glamorous": "^4.12.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "react-social-icons": "^2.8.1"
   },
-  "devDependencies": {
-    "gh-pages": "^1.0.0"
-  },
+  "devDependencies": {},
   "homepage": "https://jake.partus.ch",
   "license": "MIT",
   "repository": {
