@@ -37,7 +37,8 @@ const CardGroup = glamorous.div({
 const Card = glamorous.img({
     width: '200px',
     height: '200px',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    marginBottom: '0'
 })
 
 const Skill = glamorous.div({

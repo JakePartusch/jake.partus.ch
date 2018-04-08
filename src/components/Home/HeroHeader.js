@@ -56,10 +56,10 @@ export default class HeroHeader extends Component {
                         <NameHeader>Jake Partusch</NameHeader>
                     </HeroHeading>
                     <HeroSubHeading>Full-Stack Developer. 💻</HeroSubHeading>
+                    <HeroSubHeading>Dad. 👪</HeroSubHeading>
+                    <HeroSubHeading>Golden retriever lover. 🐶</HeroSubHeading>
                     <HeroSubHeading>Traveler. ✈️</HeroSubHeading>
                     <HeroSubHeading>Homebrewer. 🍻</HeroSubHeading>
-                    <HeroSubHeading>Golden retriever lover. 🐶</HeroSubHeading>
-
                 </Container>
             </HeroSegment>
         )
