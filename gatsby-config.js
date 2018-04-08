@@ -5,6 +5,13 @@ module.exports = {
     title: 'Jake Partusch',
   },
   pathPrefix: '/',
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/util/typography`,
+      },
+    }
+  ],
 }
 
