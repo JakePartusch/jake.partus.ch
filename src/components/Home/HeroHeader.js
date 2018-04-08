@@ -46,13 +46,13 @@ const Avatar = glamorous.img({
 });
 
 export default class HeroHeader extends Component {
-
+    
     render() {
         return (
             <HeroSegment>
                 <Container>
                     <HeroHeading>
-                        <Avatar src={"https://objectpartners.com/wp-content/uploads/2016/01/jakepartusch-headshot-square.jpg"}/>
+                        <Avatar src={this.props.avatar}/>
                         <NameHeader>Jake Partusch</NameHeader>
                     </HeroHeading>
                     <HeroSubHeading>Full-Stack Developer. 💻</HeroSubHeading>
