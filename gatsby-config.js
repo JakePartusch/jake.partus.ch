@@ -1,5 +1,3 @@
-const autoprefixer = require('autoprefixer')
-
 module.exports = {
   siteMetadata: {
     title: 'Jake Partusch',
@@ -15,6 +13,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
