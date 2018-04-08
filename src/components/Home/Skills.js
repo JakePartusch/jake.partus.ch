@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
-import javaScriptLogo from './images/javascript-logo.png'
-import angularLogo from './images/angular-logo.png'
-import reactLogo from './images/react-logo.png'
-import javaLogo from './images/java-logo.png'
-import nodeLogo from './images/node-logo.png'
-import springLogo from './images/spring-logo.png'
 
 const SkillsSegment = glamorous.div({
     padding: '0em',
@@ -56,7 +50,6 @@ const SkillGroup = glamorous.div({
 });
 
 export default class Skills extends Component {
-
     render() {
         return (
             <SkillsSegment>
@@ -64,17 +57,13 @@ export default class Skills extends Component {
                     <Skill>
                         <SkillsHeader>Frontend</SkillsHeader>
                         <CardGroup>
-                            <Card src={javaScriptLogo}/>
-                            <Card src={angularLogo} />
-                            <Card src={reactLogo} />
+                            {this.props.frontendLogos.map(logo => <Card key={logo} src={logo}/>)}
                         </CardGroup>
                     </Skill>
                     <Skill>
                         <SkillsHeader>Backend</SkillsHeader>
                         <CardGroup>
-                            <Card src={javaLogo} />
-                            <Card src={nodeLogo} />
-                            <Card src={springLogo} />
+                            {this.props.backendLogos.map(logo => <Card key={logo} src={logo}/>)}
                         </CardGroup>
                     </Skill>
                 </SkillGroup>

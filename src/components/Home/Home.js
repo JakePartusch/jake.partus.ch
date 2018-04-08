@@ -8,13 +8,15 @@ import glamorous from 'glamorous';
 const HomePage = glamorous.div({});
 
 export default class Home extends Component {
-  state = {}
-
   render() {
     return (
       <HomePage>
-        <HeroHeader/>
-        <Skills/>
+        <HeroHeader
+          avatar={this.props.avatar}
+        />
+        <Skills
+         {...this.props}
+        />
         <Work/>
         <Footer/>
       </HomePage>
