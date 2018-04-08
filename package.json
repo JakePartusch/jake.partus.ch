@@ -17,6 +17,7 @@
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.29",
+    "gatsby-transformer-remark": "^1.7.39",
     "gatsby-transformer-sharp": "^1.6.22",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.1",

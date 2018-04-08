@@ -20,7 +20,8 @@ const SkillsColumn = glamorous.div({
 });
 
 const SkillsHeader = glamorous.h2({
-    fontSize: '3em'
+    fontSize: '3em',
+    fontWeight: '400'
 });
 
 const CardGroup = glamorous.div({
