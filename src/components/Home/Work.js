@@ -60,11 +60,6 @@ const ButtonGroup = glamorous.div({
 })
 
 const Button = glamorous.button({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    boxSizing: 'border-box',
     backgroundColor: 'steelblue',
     color: 'white',
     cursor: 'pointer',
@@ -72,12 +67,12 @@ const Button = glamorous.button({
     padding: '0.5rem',
     transition: '175ms ease-in-out',
     width: '100px',
-    margin: '0.25em'
+    margin: '0.25em',
+    border: 'steelblue 3px solid'
 }, ({inverted}) => ({
     ...(inverted ? {
         backgroundColor: '#FFF',
         color: 'steelblue',
-        border: 'steelblue 3px solid'
     }: {})
 }))
 
@@ -106,8 +101,8 @@ export default class Work extends Component {
                     <CardFooter>
                         <Divider/>
                         <ButtonGroup>
-                            <Button inverted>Site</Button>
-                            <Button>Source</Button>
+                            <a href="https://www.fantasy-football-power-rankings.com/"> <Button inverted>Site</Button></a>
+                            <a href="https://github.com/JakePartusch/fantasy-football-power-rankings"><Button>Source</Button></a>
                         </ButtonGroup>
                     </CardFooter>
                 </Card>
@@ -120,8 +115,8 @@ export default class Work extends Component {
                     <CardFooter>
                         <Divider/>
                         <ButtonGroup>
-                            <Button inverted>Site</Button>
-                            <Button>Source</Button>
+                            <a href="https://www.npmjs.com/package/garmin-node-api"><Button inverted>Site</Button></a>
+                            <a href="https://github.com/JakePartusch/garmin-node-api"><Button>Source</Button></a>
                         </ButtonGroup>
                     </CardFooter>
                 </Card>
@@ -134,53 +129,11 @@ export default class Work extends Component {
                     <CardFooter>
                         <Divider/>
                         <ButtonGroup>
-                            <Button inverted>Site</Button>
-                            <Button>Source</Button>
+                            <a href="https://villaspringslake.com/"><Button inverted>Site</Button></a>
+                            <a href="https://github.com/JakePartusch/villa-springs-website"><Button>Source</Button></a>
                         </ButtonGroup>
                     </CardFooter>
                 </Card>
-                {/* <Divider
-                    as={WorkDivider}
-                    className='header'
-                    horizontal
-                >
-                <a href='#'>My Work</a>
-                </Divider>
-                <Header as={WorkHeader}>Fantasy Football Power Rankings</Header>
-                <WorkParagraph>
-                    A website developed in React that calculates the record of a team regardless of individual weekly matchups.
-                </WorkParagraph>
-                <Button.Group>
-                    <a href="https://github.com/JakePartusch/fantasy-football-power-rankings">
-                        <Button>Code</Button>
-                    </a>
-                    <Button.Or />
-                    <a href="https://www.fantasy-football-power-rankings.com/">
-                        <Button primary>Site</Button>
-                    </a>
-                </Button.Group>
-                <Divider />
-                <Header as={WorkHeader}>Garmin Node API</Header>
-                <WorkParagraph>
-                    An npm package for retrieving steps and other data from a Garmin Connect account
-                </WorkParagraph>
-                <Button.Group>
-                    <a href="https://github.com/JakePartusch/garmin-node-api">
-                        <Button>Code</Button>
-                    </a>
-                    <Button.Or />
-                    <a href="https://www.npmjs.com/package/garmin-node-api">
-                        <Button primary>Site</Button>
-                    </a>
-                </Button.Group>
-                <Divider/>
-                <Header as={WorkHeader}>Wulf's Custom Welding</Header>
-                <WorkParagraph>
-                    A Wordpress site built for a local company.
-                </WorkParagraph>
-                <a href="https://wulfscustomwelding.com/">
-                    <Button primary>Site</Button>
-                </a> */}
             </WorkContainer>
         </WorkSegment>
         )
