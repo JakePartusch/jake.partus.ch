@@ -1,9 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container } from 'semantic-ui-react';
 
-// Styles
-import 'semantic-ui-css/semantic.css';
 
 export default class IndexLayout extends React.Component {
   static propTypes = {
@@ -12,9 +9,9 @@ export default class IndexLayout extends React.Component {
 
   render() {
     return (
-      <Container fluid>
+      <div >
         {this.props.children()}
-      </Container>
+      </div>
     )
   }
 }
