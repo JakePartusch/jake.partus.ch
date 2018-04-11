@@ -41,7 +41,7 @@ query IndexQuery {
     edges {
       node {
         ... on ImageSharp {
-          resize(width: 150, height: 150) {
+          resize(width: 720, height: 720) {
             src
           }
         }
