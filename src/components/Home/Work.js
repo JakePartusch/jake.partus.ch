@@ -30,7 +30,7 @@ const WorkParagraph = glamorous.p({
 const Card = glamorous.div({
     width: '250px',
     height: '300px',
-    boxShadow: '2px 1px 6px 0px #666',
+    boxShadow: '0 0 6px rgba(0, 0, 0, 0.2)',
     margin: '1em',
     padding: '1em'
 })
