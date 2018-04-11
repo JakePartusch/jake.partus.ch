@@ -3,15 +3,14 @@ import { SocialIcon } from 'react-social-icons';
 import glamorous from 'glamorous';
 
 const FooterContainer = glamorous.div({
-    height: '65px',
-    backgroundColor: '#1B1C1D',
-    display: 'flex'
+    backgroundColor: '#1B1C1D'
 });
 
-const FooterMessage = glamorous.p({
-    marginTop: '20px',
-    paddingLeft: '2em',
-    color: '#FFF'
+const FooterMessage = glamorous.div({
+    paddingTop: '1em',
+    marginLeft: '0.25em',
+    color: '#FFF',
+    textAlign: 'center'
 })
 
 const StyledSocialIcon = glamorous(SocialIcon)({
@@ -19,7 +18,10 @@ const StyledSocialIcon = glamorous(SocialIcon)({
 })
 
 const SocialIcons = glamorous.div({
-    display: 'flex'
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: '1em'
 })
 
 export default class Footer extends Component {
@@ -27,12 +29,12 @@ export default class Footer extends Component {
     render() {
         return (
             <FooterContainer>
+                <FooterMessage>Made by yours truly 😊</FooterMessage>
                 <SocialIcons>
                     <StyledSocialIcon url="https://twitter.com/JakePartusch"/>
                     <StyledSocialIcon url="https://github.com/JakePartusch" />
                     <StyledSocialIcon url="https://www.linkedin.com/in/jacob-partusch-4a181b79/"/>
                 </SocialIcons>
-                <FooterMessage>Made by yours truly 😊</FooterMessage>
             </FooterContainer>
         )
     }

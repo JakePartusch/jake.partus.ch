@@ -4,8 +4,8 @@ import glamorous from 'glamorous';
 const SkillsSegment = glamorous.div({
     padding: '0em',
     padding: '1em 0em',
-    background: '#CCC',
-    color: 'rgba(255, 255, 255, .9)',
+    background: 'rgb(240, 240, 240)',
+    color: '#1B1C1D',
     textAlign: 'center',
     paddingTop: '5em',
     paddingBottom: '5em',
@@ -31,7 +31,7 @@ const CardGroup = glamorous.div({
     backgroundColor: '#FFF',
     marginBottom: '0',
     padding: '1em',
-    boxShadow: '2px 1px 6px 0px #666'
+    boxShadow: '0 0 6px rgba(0, 0, 0, 0.2)'
 })
 
 const Card = glamorous.img({
