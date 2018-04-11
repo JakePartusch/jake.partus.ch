@@ -21,6 +21,22 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/static/*': [
+            'Cache-Control: public,max-age=31536000,immutable', // cache forever
+          ],
+          '/*.html': [
+            'Cache-Control: public, max-age=0, must-revalidate', // do not cache HTML files
+          ],
+          '/*.js': [
+            'Cache-Control: public, max-age=0, must-revalidate', // do not cache JS files
+          ],
+        },
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typography`,
