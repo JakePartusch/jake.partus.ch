@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 
-const SkillsSegment = glamorous.div({
+const SkillsSegment = styled.div({
     padding: '0em',
     padding: '1em 0em',
     background: 'rgb(240, 240, 240)',
@@ -14,17 +14,12 @@ const SkillsSegment = glamorous.div({
     borderBottom: '1px solid rgba(34, 36, 38, .15)'
 });
 
-const SkillsColumn = glamorous.div({
-    paddingBottom: '5em !important', 
-    paddingTop: '5em !important' 
-});
-
-const SkillsHeader = glamorous.h2({
+const SkillsHeader = styled.h2({
     fontSize: '3em',
     fontWeight: '400'
 });
 
-const CardGroup = glamorous.div({
+const CardGroup = styled.div({
     display: 'flex',
     flexWrap : 'wrap',
     justifyContent: 'center',
@@ -34,18 +29,18 @@ const CardGroup = glamorous.div({
     boxShadow: '0 0 6px rgba(0, 0, 0, 0.2)'
 })
 
-const Card = glamorous.img({
+const Card = styled.img({
     width: '200px',
     height: '200px',
     objectFit: 'cover',
     marginBottom: '0'
 })
 
-const Skill = glamorous.div({
+const Skill = styled.div({
     padding: '1em'
 });
 
-const SkillGroup = glamorous.div({
+const SkillGroup = styled.div({
     display : 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap'

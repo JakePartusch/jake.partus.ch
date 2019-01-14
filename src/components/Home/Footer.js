@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import { SocialIcon } from 'react-social-icons';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled'
 
-const FooterContainer = glamorous.div({
+
+const FooterContainer = styled.div({
     backgroundColor: '#1B1C1D'
 });
 
-const FooterMessage = glamorous.div({
+const FooterMessage = styled.div({
     paddingTop: '1em',
     marginLeft: '0.25em',
     color: '#FFF',
     textAlign: 'center'
 })
 
-const StyledSocialIcon = glamorous(SocialIcon)({
+const StyledSocialIcon = styled(SocialIcon)({
     margin: '0.25em'
 })
 
-const SocialIcons = glamorous.div({
+const SocialIcons = styled.div({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

@@ -3,9 +3,9 @@ import HeroHeader from './HeroHeader';
 import Skills from './Skills';
 import Work from './Work';
 import Footer from './Footer';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled'
 
-const HomePage = glamorous.div({});
+const HomePage = styled.div({});
 
 export default class Home extends Component {
   render() {

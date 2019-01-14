@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 
-const HeroSegment = glamorous.div({
+const HeroSegment = styled.div({
     minHeight: '700px', 
     padding: '1em 0em',
     background: '#1B1C1D',
@@ -13,27 +13,27 @@ const HeroSegment = glamorous.div({
     borderBottom: '1px solid rgba(34, 36, 38, .15)'
 });
 
-const HeroHeading = glamorous.div({
+const HeroHeading = styled.div({
     marginBottom: '0',
     marginTop: '8em' 
 });
 
-const NameHeader = glamorous.h1({
+const NameHeader = styled.h1({
     fontSize: '4em'
 });
 
-const HeroSubHeading = glamorous.h4({
+const HeroSubHeading = styled.h4({
     fontSize: '1.3em',
     marginBottom: '0.25em'
 })
 
-const Container = glamorous.div({
+const Container = styled.div({
     maxWidth: '700px',
     lineHeight: '1.5',
     margin: 'auto'
 });
 
-const Avatar = glamorous.img({
+const Avatar = styled.img({
     width: '150px',
     height: 'auto',
     marginLeft: 'auto',
@@ -55,8 +55,8 @@ export default class HeroHeader extends Component {
                         <Avatar src={this.props.avatar}/>
                         <NameHeader>Jake Partusch</NameHeader>
                     </HeroHeading>
-                    <HeroSubHeading>Full-Stack Developer. 💻</HeroSubHeading>
                     <HeroSubHeading>Dad. 👪</HeroSubHeading>
+                    <HeroSubHeading>Full-Stack Developer. 💻</HeroSubHeading>
                     <HeroSubHeading>Golden retriever lover. 🐶</HeroSubHeading>
                     <HeroSubHeading>Traveler. ✈️</HeroSubHeading>
                     <HeroSubHeading>Homebrewer. 🍻</HeroSubHeading>

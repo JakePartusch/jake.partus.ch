@@ -1,33 +1,20 @@
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 
-const WorkSegment = glamorous.div({
+const WorkSegment = styled.div({
     padding: '4em 0 4em 0',
     maxWidth: '1000px',
     margin: 'auto'
 });
 
-const WorkContainer = glamorous.div({
+const WorkContainer = styled.div({
     display: 'flex',
     flexWrap : 'wrap',
     justifyContent: 'center',
     backgroundColor: '#FFF',
 });
 
-const WorkDivider = glamorous.h4({
-    margin: '1em 0em !important', 
-    textTransform: 'uppercase !important'
-});
-
-const WorkHeader = glamorous.h3({
-    fontSize: '2em !important'
-});
-
-const WorkParagraph = glamorous.p({
-    fontSize: '1.33em'
-});
-
-const Card = glamorous.div({
+const Card = styled.div({
     width: '250px',
     height: '300px',
     boxShadow: '0 0 6px rgba(0, 0, 0, 0.2)',
@@ -35,7 +22,7 @@ const Card = glamorous.div({
     padding: '1em'
 })
 
-const CardHeader = glamorous.h2({
+const CardHeader = styled.h2({
     fontSize: '22px',
     fontWeight: '400',
     margin: '0',
@@ -43,13 +30,13 @@ const CardHeader = glamorous.h2({
     textAlign: 'center'
 });
 
-const CardSubHeader = glamorous.h2({
+const CardSubHeader = styled.h2({
     color: '#1a1a1a',
     fontSize: '18px',
     margin: '0.25em, 0'
 });
 
-const Divider = glamorous.hr({
+const Divider = styled.hr({
     border: 'none',
     backgroundColor: '#EEE',
     height: '1px',
@@ -57,11 +44,11 @@ const Divider = glamorous.hr({
     margin: '0.5em auto'
 })
 
-const ButtonGroup = glamorous.div({
+const ButtonGroup = styled.div({
     display: 'flex'
 })
 
-const Button = glamorous.button({
+const Button = styled.button({
     backgroundColor: 'steelblue',
     color: 'white',
     cursor: 'pointer',
@@ -78,12 +65,12 @@ const Button = glamorous.button({
     }: {})
 }))
 
-const CardBody = glamorous.div({
+const CardBody = styled.div({
     minHeight: '100%',
     marginBottom: '-90px'
 })
 
-const CardFooter = glamorous.div({
+const CardFooter = styled.div({
 
 })
 
