@@ -1,36 +1,30 @@
 import React, { Component } from "react";
 import styled from "@emotion/styled";
+//https://trianglify.io/p/w:1440!h:900!x:RdGy!v:0.842!c:0.171!s:3yy7z9
+import background from "./trianglify_red.svg";
 
 const HeroSegment = styled.div({
-  minHeight: "700px",
-  padding: "1em 0em",
-  background: "#1B1C1D",
-  color: "rgba(255, 255, 255, .9)",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignContent: "center",
+  height: "100vh",
+  color: "rgba(0, 0, 0, .9)",
   textAlign: "center",
-  margin: "0",
-  paddingLeft: "0",
-  paddingRight: "0",
-  borderBottom: "1px solid rgba(34, 36, 38, .15)"
-});
-
-const HeroHeading = styled.div({
-  marginBottom: "0",
-  marginTop: "8em"
+  borderBottom: "1px solid rgba(34, 36, 38, .15)",
+  backgroundImage: `url('${background}')`,
+  backgroundSize: "cover"
 });
 
 const NameHeader = styled.h1({
-  fontSize: "4em"
+  fontSize: "4em",
+  fontWeight: 300
 });
 
 const HeroSubHeading = styled.h4({
   fontSize: "1.3em",
-  marginBottom: "0.25em"
-});
-
-const Container = styled.div({
-  maxWidth: "700px",
-  lineHeight: "1.5",
-  margin: "auto"
+  marginBottom: "0.25em",
+  fontWeight: 300
 });
 
 const Avatar = styled.img({
@@ -48,17 +42,15 @@ export default class HeroHeader extends Component {
   render() {
     return (
       <HeroSegment>
-        <Container>
-          <HeroHeading>
-            <Avatar src={this.props.avatar} />
-            <NameHeader>Jake Partusch</NameHeader>
-          </HeroHeading>
-          <HeroSubHeading>Dad. 👪</HeroSubHeading>
-          <HeroSubHeading>JavaScript Developer. 💻</HeroSubHeading>
-          <HeroSubHeading>Golden retriever lover. 🐶</HeroSubHeading>
-          <HeroSubHeading>Traveler. ✈️</HeroSubHeading>
-          <HeroSubHeading>Homebrewer. 🍻</HeroSubHeading>
-        </Container>
+        <div>
+          <Avatar src={this.props.avatar} />
+          <NameHeader>Jake Partusch</NameHeader>
+        </div>
+        <HeroSubHeading>Dad. 👪</HeroSubHeading>
+        <HeroSubHeading>JavaScript Developer. 💻</HeroSubHeading>
+        <HeroSubHeading>Golden retriever lover. 🐶</HeroSubHeading>
+        <HeroSubHeading>Traveler. ✈️</HeroSubHeading>
+        <HeroSubHeading>Homebrewer. 🍻</HeroSubHeading>
       </HeroSegment>
     );
   }
