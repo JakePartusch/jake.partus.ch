@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { SocialIcon } from "react-social-icons";
 import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -112,6 +111,7 @@ const Projects = ({ selectedTechnology }) => {
             </ProjectCard>
           );
         }
+        return null;
       })}
     </>
   );
