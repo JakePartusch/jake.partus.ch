@@ -46,11 +46,36 @@ export default class HeroHeader extends Component {
           <Avatar src={this.props.avatar} />
           <NameHeader>Jake Partusch</NameHeader>
         </div>
-        <HeroSubHeading>Dad. 👪</HeroSubHeading>
-        <HeroSubHeading>JavaScript Developer. 💻</HeroSubHeading>
-        <HeroSubHeading>Golden retriever lover. 🐶</HeroSubHeading>
-        <HeroSubHeading>Traveler. ✈️</HeroSubHeading>
-        <HeroSubHeading>Homebrewer. 🍻</HeroSubHeading>
+        <HeroSubHeading>
+          Dad.{" "}
+          <span role="img" aria-label="family">
+            👪
+          </span>
+        </HeroSubHeading>
+        <HeroSubHeading>
+          JavaScript Developer.{" "}
+          <span role="img" aria-label="computer">
+            💻
+          </span>
+        </HeroSubHeading>
+        <HeroSubHeading>
+          Golden retriever lover.{" "}
+          <span role="img" aria-label="dog">
+            🐶
+          </span>
+        </HeroSubHeading>
+        <HeroSubHeading>
+          Traveler.{" "}
+          <span role="img" aria-label="airplane">
+            ✈️
+          </span>
+        </HeroSubHeading>
+        <HeroSubHeading>
+          Homebrewer.{" "}
+          <span role="img" aria-label="beers">
+            🍻
+          </span>
+        </HeroSubHeading>
       </HeroSegment>
     );
   }

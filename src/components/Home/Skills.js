@@ -65,8 +65,14 @@ const Skills = props => {
       <TechnologiesContainer>
         <CardGroup>
           {technologyLogos.map((logo, i) => (
-            <LogoButton onClick={() => setSelectedLogo(i)}>
-              <Card key={logo} src={logo.src} selected={i === selectedLogo} />
+            <LogoButton
+              key={logo.src}
+              onClick={() => {
+                setSelectedLogo(null);
+                setTimeout(() => setSelectedLogo(i), 100);
+              }}
+            >
+              <Card src={logo.src} selected={i === selectedLogo} />
             </LogoButton>
           ))}
         </CardGroup>
