@@ -84,45 +84,42 @@ const Projects = ({ selectedTechnology }) => {
       }
     }
   `);
-  const matchingProjects = projectsData.allMarkdownRemark.edges.map(edge => ({
-    ...edge.node.frontmatter
-  }));
+  const matchingProjects = projectsData.allMarkdownRemark.edges
+    .map(edge => ({
+      ...edge.node.frontmatter
+    }))
+    .filter(
+      project =>
+        selectedTechnology &&
+        project.tags.some(tag => selectedTechnology.originalName.includes(tag))
+    );
   return (
     <>
       <TransitionGroup component={null}>
         {matchingProjects.map((project, i) => {
-          if (
-            selectedTechnology &&
-            project.tags.some(tag =>
-              selectedTechnology.originalName.includes(tag)
-            )
-          ) {
-            return (
-              <CSSTransition
-                key={project.sourceLink}
-                timeout={300}
-                classNames="card"
-                unmountOnExit
-              >
-                <ProjectCard>
-                  <ProjectCardHeading>
-                    <ProjectCardTitle>{project.title}</ProjectCardTitle>
-                    <Actions>
-                      <GitHubLink url={project.sourceLink} />
-                      <WebsiteLink url={project.siteLink} />
-                    </Actions>
-                  </ProjectCardHeading>
-                  <p>{project.content}</p>
-                  <Tags>
-                    {project.tags.map(tag => (
-                      <Tag key={tag}>{tag}</Tag>
-                    ))}
-                  </Tags>
-                </ProjectCard>
-              </CSSTransition>
-            );
-          }
-          return null;
+          return (
+            <CSSTransition
+              key={project.sourceLink}
+              timeout={300}
+              classNames="card"
+            >
+              <ProjectCard>
+                <ProjectCardHeading>
+                  <ProjectCardTitle>{project.title}</ProjectCardTitle>
+                  <Actions>
+                    <GitHubLink url={project.sourceLink} />
+                    <WebsiteLink url={project.siteLink} />
+                  </Actions>
+                </ProjectCardHeading>
+                <p>{project.content}</p>
+                <Tags>
+                  {project.tags.map(tag => (
+                    <Tag key={tag}>{tag}</Tag>
+                  ))}
+                </Tags>
+              </ProjectCard>
+            </CSSTransition>
+          );
         })}
       </TransitionGroup>
     </>
