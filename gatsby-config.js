@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Jake Partusch's Website`,
     description: `A place to showcase stuff made by Jake`,
-    author: `@JakePartusch`
+    author: `@JakePartusch`,
+    siteUrl: "https://jake.partus.ch"
   },
   pathPrefix: "/",
   plugins: [
@@ -35,6 +36,7 @@ module.exports = {
         icon: `src/images/avatar.jpg` // This path is relative to the root of the site.
       }
     },
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-netlify",
