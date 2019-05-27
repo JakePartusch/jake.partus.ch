@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "../components/Home";
+import SEO from "../components/SEO";
 
 export default class Index extends React.Component {
   render() {
@@ -8,6 +9,7 @@ export default class Index extends React.Component {
     )[0];
     return (
       <div>
+        <SEO title="Jake Partusch's Website" />
         <Home avatar={avatar} />
       </div>
     );

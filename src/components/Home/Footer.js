@@ -35,6 +35,7 @@ export default class Footer extends Component {
         <SocialIcons>
           <CopyrightText>© Jake Partusch. All rights reserved.</CopyrightText>
           <SocialLink
+            aria-label="Twitter"
             noopener
             noreferrer
             href="https://twitter.com/JakePartusch"
@@ -46,6 +47,7 @@ export default class Footer extends Component {
             />
           </SocialLink>
           <SocialLink
+            aria-label="GitHub"
             noopener
             noreferrer
             href="https://github.com/JakePartusch"
@@ -57,6 +59,7 @@ export default class Footer extends Component {
             />
           </SocialLink>
           <SocialLink
+            aria-label="LinkedIn"
             noopener
             noreferrer
             href="https://www.linkedin.com/in/jacob-partusch-4a181b79/"
