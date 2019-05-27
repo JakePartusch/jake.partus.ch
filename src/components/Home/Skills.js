@@ -66,13 +66,18 @@ const Skills = props => {
         <CardGroup>
           {technologyLogos.map((logo, i) => (
             <LogoButton
+              aria-label={`select technology ${logo.originalName}`}
               key={logo.src}
               onClick={() => {
                 setSelectedLogo(null);
                 setTimeout(() => setSelectedLogo(i), 100);
               }}
             >
-              <Card src={logo.src} selected={i === selectedLogo} />
+              <Card
+                alt={`technology ${logo.originalName}`}
+                src={logo.src}
+                selected={i === selectedLogo}
+              />
             </LogoButton>
           ))}
         </CardGroup>

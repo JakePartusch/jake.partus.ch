@@ -43,7 +43,7 @@ export default class HeroHeader extends Component {
     return (
       <HeroSegment>
         <div>
-          <Avatar src={this.props.avatar} />
+          <Avatar alt="Jake Partusch" src={this.props.avatar} />
           <NameHeader>Jake Partusch</NameHeader>
         </div>
         <HeroSubHeading>

@@ -44,7 +44,7 @@ const Link = styled.a({
 
 const GitHubLink = ({ url }) => {
   return (
-    <Link href={url} target="_" noopener noreferrer>
+    <Link aria-label="Link to GitHub" href={url} target="_" noopener noreferrer>
       <FontAwesomeIcon icon={faGithub} size="lg" color="rgb(0,0,0,0.75)" />
     </Link>
   );
@@ -52,7 +52,13 @@ const GitHubLink = ({ url }) => {
 
 const WebsiteLink = ({ url }) => {
   return (
-    <Link href={url} target="_" noopener noreferrer>
+    <Link
+      aria-label="Link to website"
+      href={url}
+      target="_"
+      noopener
+      noreferrer
+    >
       <FontAwesomeIcon
         icon={faExternalLinkSquareAlt}
         size="lg"
