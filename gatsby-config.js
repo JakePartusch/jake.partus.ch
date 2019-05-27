@@ -24,6 +24,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -38,23 +39,7 @@ module.exports = {
     },
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        headers: {
-          "/static/*": [
-            "Cache-Control: public,max-age=31536000,immutable" // cache forever
-          ],
-          "/*.html": [
-            "Cache-Control: public, max-age=0, must-revalidate" // do not cache HTML files
-          ],
-          "/*.js": [
-            "Cache-Control: public, max-age=0, must-revalidate" // do not cache JS files
-          ]
-        }
-      }
-    },
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
