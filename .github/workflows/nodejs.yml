@@ -21,6 +21,7 @@ jobs:
           npm install
           npm install -g netlify-cli
           npm run build
+          npm run deploy:draft
           npm run test:performance
         env:
           CI: true
