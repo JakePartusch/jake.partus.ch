@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "develop": "gatsby develop",
+    "test:performance": "./scripts/performanceEvaluation.js",
     "build": "gatsby build",
     "clean": "git clean -xfd .cache public/",
     "serve": "yarn run clean && yarn run build && gatsby serve"
