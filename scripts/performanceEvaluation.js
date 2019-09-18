@@ -1,35 +1,33 @@
 #!/usr/bin/env node
 const exec = require("child_process").exec;
 
-const main = async () => {
-  console.log("netlify deploy --json");
-  const deployPromise = new Promise((resolve, reject) => {
-    exec(`netlify deploy --json`, (error, stdout, stderr) => {
+const promisifyExec = cmd => {
+  console.log(cmd);
+  return new Promise((resolve, reject) => {
+    exec(cmd, (error, stdout, stderr) => {
       if (error) {
         console.warn(error);
+        reject(error);
       }
       resolve(stdout ? stdout : stderr);
     });
   });
-  const deploySettings = JSON.parse(await deployPromise);
+};
+
+const main = async () => {
+  const deploySettings = JSON.parse(
+    await promisifyExec(`netlify deploy --json`)
+  );
   const { deploy_url } = deploySettings;
 
   console.log("Deploy URL:", deploy_url);
 
-  console.log(`npx @laas/lighthouse-ci ${deploy_url} --threshold=90`);
-
-  const performancePromise = new Promise((resolve, reject) => {
-    exec(
-      `npx @laas/lighthouse-ci ${deploy_url} --threshold=90`,
-      (error, stdout, stderr) => {
-        if (error) {
-          console.warn(error);
-        }
-        resolve(stdout ? stdout : stderr);
-      }
-    );
-  });
-  console.log(await performancePromise);
+  console.log(
+    await promisifyExec(`npx @laas/lighthouse-ci ${deploy_url} --threshold=90`)
+  );
 };
 
-main();
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
