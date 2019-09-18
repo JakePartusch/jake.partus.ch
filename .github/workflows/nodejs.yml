@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.x]
 
     steps:
       - uses: actions/checkout@v1
@@ -24,3 +24,4 @@ jobs:
           npm run test:performance
         env:
           CI: true
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
