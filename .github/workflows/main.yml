@@ -15,6 +15,7 @@ jobs:
       - name: Install
         run: |
           npm ci
+          npm install -g netlify-cli
       - name: Build
         run: |
           npm run build
@@ -26,7 +27,6 @@ jobs:
           npm run test:e2e
       - name: Performance Test
         run: |
-          npm install -g netlify-cli
           npm run test:performance
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
