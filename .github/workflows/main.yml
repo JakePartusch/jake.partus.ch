@@ -25,6 +25,9 @@ jobs:
       - name: E2E Test
         run: |
           npm run test:e2e
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       - name: Performance Test
         run: |
           npm run test:performance
