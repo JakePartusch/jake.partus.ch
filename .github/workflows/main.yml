@@ -21,6 +21,9 @@ jobs:
       - name: Unit Test
         run: |
           npm test
+      - name: E2E Test
+        run: |
+          npm run test:e2e
       - name: Performance Test
         run: |
           npm install -g netlify-cli

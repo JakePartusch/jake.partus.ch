@@ -4,11 +4,13 @@
   "version": "1.0.0",
   "author": "Jake Partusch",
   "scripts": {
+    "cypress:open": "cypress open",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
     "deploy:draft": "netlify deploy --json",
     "test": "jest",
     "test:performance": "./scripts/performanceEvaluation.js",
+    "test:e2e": "./scripts/e2eTests.js",
     "build": "gatsby build",
     "clean": "git clean -xfd .cache public/",
     "serve": "yarn run clean && yarn run build && gatsby serve"
@@ -44,6 +46,7 @@
     "@testing-library/react": "^9.1.4",
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.13",
+    "cypress": "^3.4.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "netlify-cli": "^2.15.0",
