@@ -1,22 +1,32 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 import React from "react";
 import styled from "@emotion/styled";
 
-const Container = styled.div({
-  background: "linear-gradient(#999, #222)",
-  minHeight: "100vh",
+const Container = styled.section({
+  background: "#eee",
+  minHeight: "120vh",
   display: "flex",
   alignItems: "center",
-  justifyContent: "center "
+  justifyContent: "center",
+  flexDirection: "column",
+  position: "relative"
+});
+
+const Heading = styled.h1({
+  textAlign: "center",
+  fontSize: "3em",
+  marginBottom: "3rem"
 });
 
 const Quote = styled.blockquote({
   maxWidth: "800px",
-  fontStyle: "italic",
   borderLeft: "5px solid rgb(178, 24, 43)",
   fontSize: "2rem",
   fontWeight: "300",
   paddingLeft: "2rem",
-  color: "rgb(255,255,255,0.9)",
+  marginBottom: "3rem",
+  color: "#111",
   "@media(max-width:600px)": {
     fontSize: "1.5rem",
     border: "none"
@@ -26,6 +36,7 @@ const Quote = styled.blockquote({
 const Bio = () => {
   return (
     <Container>
+      <Heading>About Me</Heading>
       <Quote>
         <span role="img" aria-label="wave">
           👋
@@ -40,6 +51,19 @@ const Bio = () => {
         </span>
         .
       </Quote>
+      <svg
+        css={{
+          position: "absolute",
+          bottom: "0",
+          width: "100%",
+          height: "20vh"
+        }}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#fff" points="0,0 0,100 100,100" />
+      </svg>
     </Container>
   );
 };

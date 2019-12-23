@@ -8,12 +8,14 @@ export default class Home extends Component {
   render() {
     const { avatar } = this.props;
     return (
-      <div>
+      <>
         <HeroHeader avatar={avatar} />
-        <Bio />
-        <Skills />
+        <main>
+          <Bio />
+          <Skills />
+        </main>
         <Footer />
-      </div>
+      </>
     );
   }
 }

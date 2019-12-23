@@ -1,17 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
+import React from "react";
+import PropTypes from "prop-types";
 
 export default class IndexLayout extends React.Component {
   static propTypes = {
-    children: PropTypes.func,
-  }
+    children: PropTypes.func
+  };
 
   render() {
-    return (
-      <div >
-        {this.props.children()}
-      </div>
-    )
+    return <>{this.props.children()}</>;
   }
 }

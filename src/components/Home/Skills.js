@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import Projects from "./Projects";
 
-const SkillsSegment = styled.div({
+const SkillsSegment = styled.section({
   background: "rgb(255, 255, 255, .9)",
   borderBottom: "1px solid rgba(34, 36, 38, .15)",
   minHeight: "100vh"
@@ -40,6 +40,12 @@ const LogoButton = styled.button({
   }
 });
 
+const Heading = styled.h1({
+  textAlign: "center",
+  fontSize: "3em",
+  marginBottom: "3rem"
+});
+
 const Skills = props => {
   const [selectedLogo, setSelectedLogo] = useState(0);
   const technologies = useStaticQuery(graphql`
@@ -62,6 +68,7 @@ const Skills = props => {
   }));
   return (
     <SkillsSegment>
+      <Heading>My Projects</Heading>
       <TechnologiesContainer>
         <CardGroup>
           {technologyLogos.map((logo, i) => (
