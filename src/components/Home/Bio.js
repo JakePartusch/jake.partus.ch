@@ -6,11 +6,15 @@ import styled from "@emotion/styled";
 const Container = styled.section({
   background: "#eee",
   minHeight: "120vh",
+  position: "relative"
+});
+
+const QuoteContainer = styled.div({
+  minHeight: "100vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  flexDirection: "column",
-  position: "relative"
+  flexDirection: "column"
 });
 
 const Heading = styled.h1({
@@ -36,21 +40,23 @@ const Quote = styled.blockquote({
 const Bio = () => {
   return (
     <Container>
-      <Heading>About Me</Heading>
-      <Quote>
-        <span role="img" aria-label="wave">
-          👋
-        </span>{" "}
-        My name is Jake, and I love all things JavaScript. I'm the Director of
-        Web and Mobile at Object Partners, where we help our clients to build
-        highly customized web applications. I feel most at home when I'm either
-        learning something new, or teaching others. When I'm not writing code, I
-        love to read, golf, and spend time with my family{" "}
-        <span role="img" aria-label="family">
-          👪
-        </span>
-        .
-      </Quote>
+      <QuoteContainer>
+        <Heading>About Me</Heading>
+        <Quote>
+          <span role="img" aria-label="wave">
+            👋
+          </span>{" "}
+          My name is Jake, and I love all things JavaScript. I'm the Director of
+          Web and Mobile at Object Partners, where we help our clients to build
+          highly customized web applications. I feel most at home when I'm
+          either learning something new, or teaching others. When I'm not
+          writing code, I love to read, golf, and spend time with my family{" "}
+          <span role="img" aria-label="family">
+            👪
+          </span>
+          .
+        </Quote>
+      </QuoteContainer>
       <svg
         css={{
           position: "absolute",
