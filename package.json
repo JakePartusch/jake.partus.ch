@@ -45,7 +45,7 @@
   "devDependencies": {
     "@testing-library/react": "^9.1.4",
     "babel-jest": "^24.9.0",
-    "babel-preset-gatsby": "^0.2.13",
+    "babel-preset-gatsby": "^0.2.26",
     "cypress": "^3.8.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
