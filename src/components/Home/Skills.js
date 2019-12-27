@@ -16,7 +16,7 @@ const TechnologiesContainer = styled.div({
 const CardGroup = styled.div({
   display: "flex",
   justifyContent: "center",
-  minWidth: 1250
+  minWidth: 1000
 });
 
 const Card = styled.img(({ selected }) => ({
