@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "@emotion/styled";
 
-const FooterContainer = styled.div({
+const FooterContainer = styled.footer({
   backgroundColor: "#1B1C1D"
 });
 

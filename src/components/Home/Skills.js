@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import Projects from "./Projects";
 
-const SkillsSegment = styled.div({
+const SkillsSegment = styled.section({
   background: "rgb(255, 255, 255, .9)",
   borderBottom: "1px solid rgba(34, 36, 38, .15)",
   minHeight: "100vh"
@@ -16,7 +16,7 @@ const TechnologiesContainer = styled.div({
 const CardGroup = styled.div({
   display: "flex",
   justifyContent: "center",
-  minWidth: 1250
+  minWidth: 1000
 });
 
 const Card = styled.img(({ selected }) => ({
@@ -38,6 +38,12 @@ const LogoButton = styled.button({
   ":focus": {
     outline: "none"
   }
+});
+
+const Heading = styled.h1({
+  textAlign: "center",
+  fontSize: "3em",
+  marginBottom: "3rem"
 });
 
 const Skills = props => {
@@ -62,24 +68,28 @@ const Skills = props => {
   }));
   return (
     <SkillsSegment>
+      <Heading>My Projects</Heading>
       <TechnologiesContainer>
         <CardGroup>
-          {technologyLogos.map((logo, i) => (
-            <LogoButton
-              aria-label={`select technology ${logo.originalName}`}
-              key={logo.src}
-              onClick={() => {
-                setSelectedLogo(null);
-                setTimeout(() => setSelectedLogo(i), 100);
-              }}
-            >
-              <Card
-                alt={`technology ${logo.originalName}`}
-                src={logo.src}
-                selected={i === selectedLogo}
-              />
-            </LogoButton>
-          ))}
+          {technologyLogos.map((logo, i) => {
+            const technologyShortName = logo.originalName
+              .split(".")[0]
+              .split("_")[1];
+            return (
+              <LogoButton
+                aria-label={`show projects related to ${technologyShortName}`}
+                aria-selected={i === selectedLogo}
+                key={logo.src}
+                onClick={() => setSelectedLogo(i)}
+              >
+                <Card
+                  alt={`${technologyShortName}`}
+                  src={logo.src}
+                  selected={i === selectedLogo}
+                />
+              </LogoButton>
+            );
+          })}
         </CardGroup>
       </TechnologiesContainer>
       <Projects selectedTechnology={technologyLogos[selectedLogo]} />

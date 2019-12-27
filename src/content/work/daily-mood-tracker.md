@@ -6,5 +6,4 @@ sourceLink: https://github.com/JakePartusch/daily-mood-tracker
 tags:
   - gatsby
   - aws
-  - lambda
 ---

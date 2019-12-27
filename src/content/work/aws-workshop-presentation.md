@@ -5,6 +5,5 @@ siteLink: https://aws-athene-workshop.netlify.com/
 sourceLink: https://github.com/JakePartusch/aws-workshop-slides
 tags:
   - aws
-  - lambda
   - presentation
 ---

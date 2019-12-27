@@ -1,19 +1,29 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
+// eslint-disable-next-line
 import React, { Component } from "react";
 import styled from "@emotion/styled";
 //https://trianglify.io/p/w:1440!h:900!x:RdGy!v:0.842!c:0.171!s:3yy7z9
 import background from "./trianglify_red.svg";
 
-const HeroSegment = styled.div({
+const HeroSegment = styled.header({
   display: "flex",
+  flexDirection: "column",
+  position: "relative",
+  border: "none",
+  textAlign: "center",
+  backgroundImage: `url('${background}')`,
+  backgroundSize: "cover",
+  height: "120vh"
+});
+
+const HeroContainer = styled.div({
   flexDirection: "column",
   justifyContent: "center",
   alignContent: "center",
   height: "100vh",
   color: "rgba(0, 0, 0, .9)",
-  textAlign: "center",
-  borderBottom: "1px solid rgba(34, 36, 38, .15)",
-  backgroundImage: `url('${background}')`,
-  backgroundSize: "cover"
+  display: "flex"
 });
 
 const NameHeader = styled.h1({
@@ -21,9 +31,8 @@ const NameHeader = styled.h1({
   fontWeight: 300
 });
 
-const HeroSubHeading = styled.h4({
+const HeroSubHeading = styled.div({
   fontSize: "1.3em",
-  marginBottom: "0.25em",
   fontWeight: 300
 });
 
@@ -42,40 +51,55 @@ export default class HeroHeader extends Component {
   render() {
     return (
       <HeroSegment>
-        <div>
-          <Avatar alt="Jake Partusch" src={this.props.avatar} />
-          <NameHeader>Jake Partusch</NameHeader>
-        </div>
-        <HeroSubHeading>
-          Dad.{" "}
-          <span role="img" aria-label="family">
-            👪
-          </span>
-        </HeroSubHeading>
-        <HeroSubHeading>
-          JavaScript Developer.{" "}
-          <span role="img" aria-label="computer">
-            💻
-          </span>
-        </HeroSubHeading>
-        <HeroSubHeading>
-          Golden retriever lover.{" "}
-          <span role="img" aria-label="dog">
-            🐶
-          </span>
-        </HeroSubHeading>
-        <HeroSubHeading>
-          Traveler.{" "}
-          <span role="img" aria-label="airplane">
-            ✈️
-          </span>
-        </HeroSubHeading>
-        <HeroSubHeading>
-          Homebrewer.{" "}
-          <span role="img" aria-label="beers">
-            🍻
-          </span>
-        </HeroSubHeading>
+        <HeroContainer>
+          <div>
+            <Avatar alt="Jake Partusch" src={this.props.avatar} />
+            <NameHeader>Jake Partusch</NameHeader>
+          </div>
+          <HeroSubHeading>
+            Dad.{" "}
+            <span role="img" aria-label="family">
+              👪
+            </span>
+          </HeroSubHeading>
+          <HeroSubHeading>
+            JavaScript Developer.{" "}
+            <span role="img" aria-label="computer">
+              💻
+            </span>
+          </HeroSubHeading>
+          <HeroSubHeading>
+            Golden retriever lover.{" "}
+            <span role="img" aria-label="dog">
+              🐶
+            </span>
+          </HeroSubHeading>
+          <HeroSubHeading>
+            Traveler.{" "}
+            <span role="img" aria-label="airplane">
+              ✈️
+            </span>
+          </HeroSubHeading>
+          <HeroSubHeading>
+            Homebrewer.{" "}
+            <span role="img" aria-label="beers">
+              🍻
+            </span>
+          </HeroSubHeading>
+        </HeroContainer>
+        <svg
+          css={{
+            position: "absolute",
+            bottom: "0",
+            width: "100%",
+            height: "20vh"
+          }}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon fill="#eee" points="0,100 100,0 100,100" />
+        </svg>
       </HeroSegment>
     );
   }
