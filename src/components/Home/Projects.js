@@ -4,15 +4,14 @@ import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import "./Projects.css";
 
-const ProjectCard = styled.div({
+const ProjectCard = styled.li({
   maxWidth: 600,
   background: "rgb(255, 255, 255)",
   boxShadow: "0 0 6px rgba(0, 0, 0, 0.2)",
   padding: "1rem",
-  margin: "1rem auto"
+  margin: "1rem auto",
+  listStyle: "none"
 });
 
 const ProjectCardHeading = styled.div({
@@ -22,8 +21,10 @@ const ProjectCardHeading = styled.div({
   marginBottom: "0.5rem"
 });
 
-const ProjectCardTitle = styled.h3({
-  marginBottom: 0
+const ProjectCardTitle = styled.h2({
+  marginBottom: 0,
+  fontWeight: 100,
+  fontSize: "1.3rem"
 });
 
 const Tags = styled.div({
@@ -100,35 +101,27 @@ const Projects = ({ selectedTechnology }) => {
         project.tags.some(tag => selectedTechnology.originalName.includes(tag))
     );
   return (
-    <>
-      <TransitionGroup component={null}>
-        {matchingProjects.map((project, i) => {
-          return (
-            <CSSTransition
-              key={project.sourceLink}
-              timeout={300}
-              classNames="card"
-            >
-              <ProjectCard>
-                <ProjectCardHeading>
-                  <ProjectCardTitle>{project.title}</ProjectCardTitle>
-                  <Actions>
-                    <GitHubLink url={project.sourceLink} />
-                    <WebsiteLink url={project.siteLink} />
-                  </Actions>
-                </ProjectCardHeading>
-                <p>{project.content}</p>
-                <Tags>
-                  {project.tags.map(tag => (
-                    <Tag key={tag}>{tag}</Tag>
-                  ))}
-                </Tags>
-              </ProjectCard>
-            </CSSTransition>
-          );
-        })}
-      </TransitionGroup>
-    </>
+    <ul>
+      {matchingProjects.map((project, i) => {
+        return (
+          <ProjectCard>
+            <ProjectCardHeading>
+              <ProjectCardTitle>{project.title}</ProjectCardTitle>
+              <Actions>
+                <GitHubLink url={project.sourceLink} />
+                <WebsiteLink url={project.siteLink} />
+              </Actions>
+            </ProjectCardHeading>
+            <p>{project.content}</p>
+            <Tags>
+              {project.tags.map(tag => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </Tags>
+          </ProjectCard>
+        );
+      })}
+    </ul>
   );
 };
 

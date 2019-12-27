@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+// eslint-disable-next-line
 import React, { Component } from "react";
 import styled from "@emotion/styled";
 //https://trianglify.io/p/w:1440!h:900!x:RdGy!v:0.842!c:0.171!s:3yy7z9

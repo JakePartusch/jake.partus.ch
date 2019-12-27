@@ -5,6 +5,5 @@ siteLink: https://jakepartusch-chatbot-slides.netlify.com/#0
 sourceLink: https://github.com/JakePartusch/chatbot-slides
 tags:
   - aws
-  - lambda
   - presentation
 ---

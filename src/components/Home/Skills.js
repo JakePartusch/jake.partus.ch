@@ -71,22 +71,25 @@ const Skills = props => {
       <Heading>My Projects</Heading>
       <TechnologiesContainer>
         <CardGroup>
-          {technologyLogos.map((logo, i) => (
-            <LogoButton
-              aria-label={`select technology ${logo.originalName}`}
-              key={logo.src}
-              onClick={() => {
-                setSelectedLogo(null);
-                setTimeout(() => setSelectedLogo(i), 100);
-              }}
-            >
-              <Card
-                alt={`technology ${logo.originalName}`}
-                src={logo.src}
-                selected={i === selectedLogo}
-              />
-            </LogoButton>
-          ))}
+          {technologyLogos.map((logo, i) => {
+            const technologyShortName = logo.originalName
+              .split(".")[0]
+              .split("_")[1];
+            return (
+              <LogoButton
+                aria-label={`show projects related to ${technologyShortName}`}
+                aria-selected={i === selectedLogo}
+                key={logo.src}
+                onClick={() => setSelectedLogo(i)}
+              >
+                <Card
+                  alt={`${technologyShortName}`}
+                  src={logo.src}
+                  selected={i === selectedLogo}
+                />
+              </LogoButton>
+            );
+          })}
         </CardGroup>
       </TechnologiesContainer>
       <Projects selectedTechnology={technologyLogos[selectedLogo]} />
