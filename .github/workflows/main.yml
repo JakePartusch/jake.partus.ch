@@ -21,6 +21,10 @@ jobs:
       - name: Unit Tests
         run: |
           npm test
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.3.x
+          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
       - name: E2E Tests
         run: |
           npm install -g netlify-cli
