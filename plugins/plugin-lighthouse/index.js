@@ -22,7 +22,8 @@
 //   }
 // };
 const { resolve } = require("path");
-
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 const execa = require("execa");
 const chalk = require("chalk");
 const Conf = require("conf"); // for simple kv store
@@ -58,8 +59,9 @@ module.exports = {
     });
 
     // TODO: fetch previous scores from cache
-    await execa("lighthouse-ci", site, { stdio: "inherit" });
-
+    const { stdout, stderr } = await exec(`lighthouse-ci ${site}`);
+    console.log(stdout);
+    console.log(stderr);
     // serialize response
     const curLightHouse = {};
     const prevLightHouse = store.get(`lighthouse.${compareWithVersion}`);
