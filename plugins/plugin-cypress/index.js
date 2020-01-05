@@ -11,10 +11,9 @@ module.exports = {
       // );
       require("child_process").spawnSync(
         "cypress",
-        ["run", "--config", `baseUrl='${process.env.DEPLOY_URL}'`],
+        ["run", "--config", `baseUrl=${process.env.DEPLOY_URL}`],
         {
           cwd: process.cwd(),
-          detached: true,
           stdio: "inherit"
         }
       );
