@@ -35,6 +35,7 @@ module.exports = {
   name: "@netlify/plugin-lighthouse",
   // users will be tempted to use semver, but we really don't care
   onEnd: async ({ pluginConfig }) => {
+    console.log(process.env);
     let {
       site = process.env.SITE,
       currentVersion,
@@ -59,7 +60,9 @@ module.exports = {
     });
 
     // TODO: fetch previous scores from cache
-    const { stdout, stderr } = await exec(`lighthouse-ci ${site}`);
+    const { stdout, stderr } = await exec(
+      `npx lighthouse-ci https://jake.partus.ch`
+    );
     console.log(stdout);
     console.log(stderr);
     // serialize response
