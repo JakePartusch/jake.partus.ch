@@ -9,7 +9,7 @@ module.exports = {
       // const { stdout, stderr } = await exec(
       //   `cypress run --config baseUrl='${process.env.DEPLOY_URL}'`
       // );
-      require("child_process").spawn(
+      require("child_process").spawnSync(
         "cypress",
         ["run", "--config", `baseUrl='${process.env.DEPLOY_URL}'`],
         {
