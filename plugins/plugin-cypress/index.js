@@ -6,8 +6,17 @@ module.exports = {
   onEnd: async () => {
     console.log(process.env);
     try {
-      const { stdout, stderr } = await exec(
-        `cypress run --config baseUrl='${process.env.DEPLOY_URL}'`
+      // const { stdout, stderr } = await exec(
+      //   `cypress run --config baseUrl='${process.env.DEPLOY_URL}'`
+      // );
+      require("child_process").spawn(
+        "cypress",
+        ["run", "--config", `baseUrl='${process.env.DEPLOY_URL}'`],
+        {
+          cwd: process.cwd(),
+          detached: true,
+          stdio: "inherit"
+        }
       );
       console.log(stdout);
       console.log(stderr);

@@ -21,21 +21,10 @@ jobs:
       - name: Unit Tests
         run: |
           npm test
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
       - name: E2E Tests
         run: |
           npm install -g netlify-cli
           npm run test:e2e
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      - name: Performance Tests
-        run: |
-          npm install -g netlify-cli
-          npm run test:performance
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
