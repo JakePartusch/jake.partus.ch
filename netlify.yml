@@ -6,4 +6,4 @@ build:
     onEnd: echo "Ending the build"
 
 plugins:
-  - type: "./plugins/plugin-lighthouse"
+  - type: "./plugins/plugin-cypress"
