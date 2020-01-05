@@ -18,8 +18,8 @@ module.exports = {
           stdio: "inherit"
         }
       );
-      console.log(stdout);
-      console.log(stderr);
+      // console.log(stdout);
+      // console.log(stderr);
     } catch (e) {
       console.log(e);
     }
