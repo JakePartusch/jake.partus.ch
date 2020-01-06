@@ -1,0 +1,9 @@
+build:
+  publish: public
+  lifecycle:
+    onInit: echo "Starting the build"
+    onBuild: npm run build
+    onEnd: echo "Ending the build"
+
+plugins:
+  - type: "./plugins/plugin-lighthouse"

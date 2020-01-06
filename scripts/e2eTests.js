@@ -1,29 +1,21 @@
 #!/usr/bin/env node
-const exec = require("child_process").exec;
-
-const promisifyExec = cmd => {
-  console.log(cmd);
-  return new Promise((resolve, reject) => {
-    exec(cmd, (error, stdout, stderr) => {
-      if (error) {
-        console.warn(error);
-        reject(error);
-      }
-      resolve(stdout ? stdout : stderr);
-    });
-  });
-};
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 
 const main = async () => {
-  const deploySettings = JSON.parse(
-    await promisifyExec(`netlify deploy --json`)
-  );
+  const { stdout, stderr } = await exec(`netlify deploy --json`);
+  const deploySettings = JSON.parse(stdout);
   const { deploy_url } = deploySettings;
 
   console.log("Deploy URL:", deploy_url);
 
-  console.log(
-    await promisifyExec(`cypress run --config baseUrl='${deploy_url}'`)
+  require("child_process").spawnSync(
+    "cypress",
+    ["run", "--config", `baseUrl=${deploy_url}`],
+    {
+      cwd: process.cwd(),
+      stdio: "inherit"
+    }
   );
 };
 

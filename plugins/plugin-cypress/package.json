@@ -1,0 +1,22 @@
+{
+  "name": "netlify-plugin-cypress",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "netlify",
+    "netlify-plugin"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.8.1"
+  },
+  "engines": {
+    "node": ">=8.12.0"
+  }
+}
