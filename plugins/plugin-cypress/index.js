@@ -17,10 +17,14 @@ module.exports = {
       //     stdio: "inherit"
       //   }
       // );
-      require("child_process").spawnSync("curl", [process.env.DEPLOY_URL], {
-        cwd: process.cwd(),
-        stdio: "inherit"
-      });
+      require("child_process").spawnSync(
+        "curl",
+        [process.env.DEPLOY_PRIME_URL],
+        {
+          cwd: process.cwd(),
+          stdio: "inherit"
+        }
+      );
       // console.log(stdout);
       // console.log(stderr);
     } catch (e) {
