@@ -1,6 +1,6 @@
 name: Cypress
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
@@ -18,10 +18,12 @@ jobs:
       - name: Build
         run: |
           npm run build
+      - name: Waiting for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: waitFor200
+        with:
+          site_name: "jakepartusch"
       - name: Cypress Tests
         run: |
-          npm install -g netlify-cli
-          npm run test:e2e
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          npm install -g cypress
+          cypress run --config baseUrl=${{ steps.waitFor200.outputs.url }}
