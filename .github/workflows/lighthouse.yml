@@ -18,10 +18,11 @@ jobs:
       - name: Build
         run: |
           npm run build
-      - name: Wait for Netlify Deploy
-        uses: maddox/actions/wait-for-200@master
-        env:
-          URL: https://deploy-preview-54--jakepartusch.netlify.com/
+      - name: Waiting for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: waitFor200
+        with:
+          site_name: "jakepartusch"
       - name: Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.3.x
