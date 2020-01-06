@@ -26,6 +26,6 @@ jobs:
       - name: Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage --url https://deploy-preview-54--jakepartusch.netlify.com/ || echo "LHCI failed!"
+          lhci autorun --upload.target=temporary-public-storage --url ${{ steps.waitFor200.outputs.url }} || echo "LHCI failed!"
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
