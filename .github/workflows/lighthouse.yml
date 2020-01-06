@@ -1,6 +1,6 @@
 name: Lighthouse
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
