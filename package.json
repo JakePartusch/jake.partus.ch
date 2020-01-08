@@ -47,7 +47,7 @@
     "cypress": "^3.8.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
-    "netlify-cli": "^2.25.0",
+    "netlify-cli": "^2.27.0",
     "react-test-renderer": "^16.12.0"
   },
   "homepage": "https://jake.partus.ch",
