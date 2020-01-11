@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "../components/Home";
 import SEO from "../components/SEO";
+import "./index.css";
 
 export default class Index extends React.Component {
   render() {

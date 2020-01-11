@@ -1,99 +1,64 @@
-import React, { useState } from "react";
-import styled from "@emotion/styled";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
 import Projects from "./Projects";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faReact,
+  faAws,
+  faNodeJs,
+  faDev,
+  faGithub,
+  faNpm,
+  faJsSquare
+} from "@fortawesome/free-brands-svg-icons";
+import useMedia from "use-media";
 
-const SkillsSegment = styled.section({
-  background: "rgb(255, 255, 255, .9)",
-  borderBottom: "1px solid rgba(34, 36, 38, .15)",
-  minHeight: "100vh"
-});
-
-const TechnologiesContainer = styled.div({
-  overflowX: "auto"
-});
-
-const CardGroup = styled.div({
-  display: "flex",
-  justifyContent: "center",
-  minWidth: 1000
-});
-
-const Card = styled.img(({ selected }) => ({
-  width: "200px",
-  height: "200px",
-  objectFit: "cover",
-  margin: "1rem",
-  padding: "1rem",
-  background: "rgb(255, 255, 255)",
-  boxShadow: selected ? "0 0 6px rgba(0, 0, 0, 0.2)" : undefined
-}));
-
-const LogoButton = styled.button({
-  minWidth: 250,
-  border: "none",
-  padding: 0,
-  cursor: "pointer",
-  background: "rgb(255, 255, 255, .9)",
-  ":focus": {
-    outline: "none"
-  }
-});
-
-const Heading = styled.h1({
-  textAlign: "center",
-  fontSize: "3em",
-  marginBottom: "3rem"
-});
-
-const Skills = props => {
-  const [selectedLogo, setSelectedLogo] = useState(0);
-  const technologies = useStaticQuery(graphql`
-    query TechnologiesQuery {
-      allImageSharp(filter: { original: { src: { regex: "/tech/" } } }) {
-        edges {
-          node {
-            resize(width: 200, height: 200) {
-              src
-              originalName
-            }
-          }
-        }
-      }
-    }
-  `);
-  const technologyLogos = technologies.allImageSharp.edges.map(edge => ({
-    src: edge.node.resize.src,
-    originalName: edge.node.resize.originalName
-  }));
+const Skills = () => {
+  const isWide = useMedia({ minWidth: "1000px" });
   return (
-    <SkillsSegment>
-      <Heading>My Projects</Heading>
-      <TechnologiesContainer>
-        <CardGroup>
-          {technologyLogos.map((logo, i) => {
-            const technologyShortName = logo.originalName
-              .split(".")[0]
-              .split("_")[1];
-            return (
-              <LogoButton
-                aria-label={`show projects related to ${technologyShortName}`}
-                aria-selected={i === selectedLogo}
-                key={logo.src}
-                onClick={() => setSelectedLogo(i)}
-              >
-                <Card
-                  alt={`${technologyShortName}`}
-                  src={logo.src}
-                  selected={i === selectedLogo}
-                />
-              </LogoButton>
-            );
-          })}
-        </CardGroup>
-      </TechnologiesContainer>
-      <Projects selectedTechnology={technologyLogos[selectedLogo]} />
-    </SkillsSegment>
+    <section className="bg-gray-100 pb-12">
+      {isWide && (
+        <div className="flex justify-between mx-20">
+          <FontAwesomeIcon
+            icon={faJsSquare}
+            style={{ transform: "translateY(-15vh)" }}
+            className="text-red-900"
+            size="4x"
+          />
+          <FontAwesomeIcon
+            icon={faAws}
+            style={{ transform: "translateY(-12.5vh)" }}
+            className="text-red-900"
+            size="4x"
+          />
+          <FontAwesomeIcon
+            icon={faNodeJs}
+            style={{ transform: "translateY(-10vh)" }}
+            className="text-red-900"
+            size="4x"
+          />
+          <FontAwesomeIcon
+            icon={faDev}
+            style={{ transform: "translateY(-7.5vh)" }}
+            className="text-red-900"
+            size="4x"
+          />
+          <FontAwesomeIcon
+            icon={faGithub}
+            style={{ transform: "translateY(-5vh)" }}
+            className="text-red-900"
+            size="4x"
+          />
+          <FontAwesomeIcon
+            icon={faNpm}
+            style={{ transform: "translateY(-2.5vh)" }}
+            className="text-red-900"
+            size="4x"
+          />
+          <FontAwesomeIcon icon={faReact} className="text-red-900" size="4x" />
+        </div>
+      )}
+      <Projects />
+    </section>
   );
 };
 

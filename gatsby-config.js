@@ -45,6 +45,7 @@ module.exports = {
       options: {
         pathToConfigModule: `src/util/typography`
       }
-    }
+    },
+    `gatsby-plugin-postcss`
   ]
 };
