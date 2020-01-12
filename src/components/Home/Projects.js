@@ -61,9 +61,9 @@ const Projects = () => {
               <p className="text-gray-900">{project.content}</p>
             </div>
             <div>
-              <div className="mt-8 flex items-center justify-end">
+              <div className="mt-8 flex items-center justify-center">
                 <a
-                  href={project.siteLink}
+                  href={project.sourceLink}
                   target="_"
                   rel="noopener"
                   className="rounded px-3 py-2 bg-white hover:bg-gray-200 text-gray-800 font-semibold leading-tight shadow-md mr-2"

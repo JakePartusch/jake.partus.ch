@@ -36,7 +36,8 @@ const Quote = styled.blockquote({
   color: "#102A43",
   "@media(max-width:600px)": {
     fontSize: "1.5rem",
-    border: "none"
+    border: "none",
+    padding: "0 1rem"
   }
 });
 
