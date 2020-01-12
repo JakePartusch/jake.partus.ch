@@ -5,7 +5,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const Container = styled.section({
-  background: "#eee",
+  background: "#D9E2EC",
   minHeight: "120vh",
   position: "relative"
 });
@@ -21,17 +21,19 @@ const QuoteContainer = styled.div({
 const Heading = styled.h1({
   textAlign: "center",
   fontSize: "3em",
-  marginBottom: "3rem"
+  marginBottom: "3rem",
+  fontWeight: "500",
+  color: "#102A43"
 });
 
 const Quote = styled.blockquote({
   maxWidth: "800px",
-  borderLeft: "5px solid rgb(178, 24, 43)",
+  borderLeft: "5px solid #8D2B0B",
   fontSize: "2rem",
   fontWeight: "300",
   paddingLeft: "2rem",
   marginBottom: "3rem",
-  color: "#111",
+  color: "#102A43",
   "@media(max-width:600px)": {
     fontSize: "1.5rem",
     border: "none"
@@ -44,18 +46,13 @@ const Bio = () => {
       <QuoteContainer>
         <Heading>About Me</Heading>
         <Quote>
-          <span role="img" aria-label="wave">
-            👋
-          </span>{" "}
-          My name is Jake, and I love all things JavaScript. I'm the Director of
-          Web and Mobile at Object Partners, where we help our clients to build
-          highly customized web applications. I feel most at home when I'm
-          either learning something new, or teaching others. When I'm not
-          writing code, I love to read, golf, and spend time with my family{" "}
-          <span role="img" aria-label="family">
-            👪
-          </span>
-          .
+          I am a software architect, speaker, and engineer who loves all things
+          JavaScript. I’m constantly on the search for new skills and techniques
+          to build performant, accessible and user-friendly web applications.
+          Currently, I am the Director of web and mobile at Object Partners
+          where I lead front-end product development for multiple clients. When
+          I’m not writing code, I love to read, golf, and spend time with my
+          family.
         </Quote>
       </QuoteContainer>
       <svg
@@ -69,7 +66,7 @@ const Bio = () => {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
-        <polygon fill="#fff" points="0,0 0,100 100,100" />
+        <polygon fill="#F0F4F8" points="0,0 0,100 100,100" />
       </svg>
     </Container>
   );

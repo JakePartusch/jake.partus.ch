@@ -4,124 +4,96 @@ import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
+import useMedia from "use-media";
 
-const ProjectCard = styled.li({
-  maxWidth: 600,
-  background: "rgb(255, 255, 255)",
-  boxShadow: "0 0 6px rgba(0, 0, 0, 0.2)",
-  padding: "1rem",
-  margin: "1rem auto",
-  listStyle: "none"
+const ProjectList = styled.ul(({ isWide }) => {
+  const columns = isWide ? 3 : 1;
+  const maxWidth = isWide ? 1040 : 400;
+  return {
+    maxWidth,
+    margin: "auto",
+    paddingTop: "4rem",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+    display: "grid",
+    gridTemplateColumns: `repeat( ${columns}, minmax(100px, 1fr))`,
+    gridAutoRows: "1fr",
+    gridGap: "12px",
+    alignItems: "stretch"
+  };
 });
 
-const ProjectCardHeading = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: "0.5rem"
-});
-
-const ProjectCardTitle = styled.h2({
-  marginBottom: 0,
-  fontWeight: 100,
-  fontSize: "1.3rem"
-});
-
-const Tags = styled.div({
-  display: "flex"
-});
-
-const Tag = styled.p({
-  fontWeight: 100,
-  border: "solid 1px rgb(0,0,0,0.9)",
-  padding: "0 4px",
-  borderRadius: "4px",
-  margin: "0 4px"
-});
-
-const Link = styled.a({
-  margin: "0.25rem"
-});
-
-const GitHubLink = ({ url }) => {
-  return (
-    <Link aria-label="Link to GitHub" href={url} target="_" noopener noreferrer>
-      <FontAwesomeIcon icon={faGithub} size="lg" color="rgb(0,0,0,0.75)" />
-    </Link>
-  );
-};
-
-const WebsiteLink = ({ url }) => {
-  return (
-    <Link
-      aria-label="Link to website"
-      href={url}
-      target="_"
-      noopener
-      noreferrer
-    >
-      <FontAwesomeIcon
-        icon={faExternalLinkSquareAlt}
-        size="lg"
-        color="rgb(0,0,0,0.75)"
-      />
-    </Link>
-  );
-};
-
-const Actions = styled.div({
-  minWidth: 65
-});
-
-const Projects = ({ selectedTechnology }) => {
+const Projects = () => {
   const projectsData = useStaticQuery(graphql`
     query ProjectsQuery {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___rank }) {
         edges {
           node {
             frontmatter {
-              title
-              content
+              rank
               siteLink
               sourceLink
-              tags
+              stars
+              title
+              content
             }
           }
         }
       }
     }
   `);
-  const matchingProjects = projectsData.allMarkdownRemark.edges
-    .map(edge => ({
-      ...edge.node.frontmatter
-    }))
-    .filter(
-      project =>
-        selectedTechnology &&
-        project.tags.some(tag => selectedTechnology.originalName.includes(tag))
-    );
+  const matchingProjects = projectsData.allMarkdownRemark.edges.map(edge => ({
+    ...edge.node.frontmatter
+  }));
+  const isWide = useMedia({ minWidth: "1000px" });
   return (
-    <ul>
+    <ProjectList isWide={isWide}>
       {matchingProjects.map((project, i) => {
         return (
-          <ProjectCard>
-            <ProjectCardHeading>
-              <ProjectCardTitle>{project.title}</ProjectCardTitle>
-              <Actions>
-                <GitHubLink url={project.sourceLink} />
-                <WebsiteLink url={project.siteLink} />
-              </Actions>
-            </ProjectCardHeading>
-            <p>{project.content}</p>
-            <Tags>
-              {project.tags.map(tag => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
-            </Tags>
-          </ProjectCard>
+          <li
+            key={project.title}
+            className="flex flex-col bg-white rounded-lg p-8 justify-between shadow-lg"
+          >
+            <div className="flex flex-col justify-center items-center text-center mb-2">
+              <h2 className="text-gray-700 text-xl font-bold mb-4">
+                {project.title}
+              </h2>
+              <p className="text-gray-900">{project.content}</p>
+            </div>
+            <div>
+              <div className="mt-8 flex items-center justify-end">
+                <a
+                  href={project.siteLink}
+                  target="_"
+                  rel="noopener"
+                  className="rounded px-3 py-2 bg-white hover:bg-gray-200 text-gray-800 font-semibold leading-tight shadow-md mr-2"
+                >
+                  Source
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    size="lg"
+                    className="ml-2 text-gray-900"
+                  />
+                </a>
+                <a
+                  href={project.siteLink}
+                  target="_"
+                  rel="noopener"
+                  className="rounded px-3 py-2 bg-blue-600 hover:bg-blue-600 text-gray-100 font-semibold leading-tight shadow-md"
+                >
+                  Website
+                  <FontAwesomeIcon
+                    icon={faExternalLinkSquareAlt}
+                    size="lg"
+                    className="ml-2 text-gray-100"
+                  />
+                </a>
+              </div>
+            </div>
+          </li>
         );
       })}
-    </ul>
+    </ProjectList>
   );
 };
 

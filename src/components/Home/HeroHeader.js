@@ -3,8 +3,6 @@ import { jsx } from "@emotion/core";
 // eslint-disable-next-line
 import React, { Component } from "react";
 import styled from "@emotion/styled";
-//https://trianglify.io/p/w:1440!h:900!x:RdGy!v:0.842!c:0.171!s:3yy7z9
-import background from "./trianglify_red.svg";
 
 const HeroSegment = styled.header({
   display: "flex",
@@ -12,7 +10,7 @@ const HeroSegment = styled.header({
   position: "relative",
   border: "none",
   textAlign: "center",
-  backgroundImage: `url('${background}')`,
+  background: "linear-gradient(#102A43, #0F609B)",
   backgroundSize: "cover",
   height: "120vh"
 });
@@ -22,7 +20,7 @@ const HeroContainer = styled.div({
   justifyContent: "center",
   alignContent: "center",
   height: "100vh",
-  color: "rgba(0, 0, 0, .9)",
+  color: "#F0F4F8",
   display: "flex"
 });
 
@@ -36,24 +34,17 @@ const HeroSubHeading = styled.div({
   fontWeight: 300
 });
 
-const Avatar = styled.img({
-  width: "150px",
-  height: "auto",
-  marginLeft: "auto",
-  marginRight: "auto",
-  borderRadius: "500em",
-  overflow: "hidden",
-  border: "#666 2px solid",
-  boxShadow: "0px 0px 3px 0px #666"
-});
-
 export default class HeroHeader extends Component {
   render() {
     return (
       <HeroSegment>
         <HeroContainer>
           <div>
-            <Avatar alt="Jake Partusch" src={this.props.avatar} />
+            <img
+              className="mx-auto mb-8 h-40 rounded-full shadow-outline"
+              alt="Jake Partusch"
+              src={this.props.avatar}
+            />
             <NameHeader>Jake Partusch</NameHeader>
           </div>
           <HeroSubHeading>
@@ -98,7 +89,7 @@ export default class HeroHeader extends Component {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
-          <polygon fill="#eee" points="0,100 100,0 100,100" />
+          <polygon fill="#D9E2EC" points="0,100 100,0 100,100" />
         </svg>
       </HeroSegment>
     );

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Jake Partusch's Website`,
-    description: `A place to showcase stuff made by Jake`,
+    description: `A place to showcase stuff made by me`,
     author: `@JakePartusch`,
     siteUrl: "https://jake.partus.ch"
   },
@@ -45,6 +45,7 @@ module.exports = {
       options: {
         pathToConfigModule: `src/util/typography`
       }
-    }
+    },
+    `gatsby-plugin-postcss`
   ]
 };

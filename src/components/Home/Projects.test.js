@@ -3,6 +3,8 @@ import { render } from "@testing-library/react";
 import Projects from "./Projects";
 import { useStaticQuery } from "gatsby";
 
+jest.mock("use-media");
+
 describe("Projects", () => {
   it("should render all of the projects", () => {
     const projectsData = {

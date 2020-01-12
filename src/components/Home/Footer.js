@@ -22,56 +22,51 @@ const SocialLink = styled.a({
   margin: "0 0.25rem"
 });
 
-const CopyrightText = styled.p({
-  color: "rgb(255,255,255,.9)",
-  margin: 0,
-  marginRight: "1rem"
-});
-
 export default class Footer extends Component {
   render() {
     return (
-      <FooterContainer>
-        <SocialIcons>
-          <CopyrightText>© Jake Partusch. All rights reserved.</CopyrightText>
-          <SocialLink
-            aria-label="Twitter"
-            noopener
-            noreferrer
-            href="https://twitter.com/JakePartusch"
-          >
-            <FontAwesomeIcon
-              size="lg"
-              icon={faTwitter}
-              color="rgb(255,255,255,.9)"
-            />
-          </SocialLink>
-          <SocialLink
-            aria-label="GitHub"
-            noopener
-            noreferrer
-            href="https://github.com/JakePartusch"
-          >
-            <FontAwesomeIcon
-              size="lg"
-              icon={faGithub}
-              color="rgb(255,255,255,.9)"
-            />
-          </SocialLink>
-          <SocialLink
-            aria-label="LinkedIn"
-            noopener
-            noreferrer
-            href="https://www.linkedin.com/in/jacob-partusch-4a181b79/"
-          >
-            <FontAwesomeIcon
-              size="lg"
-              icon={faLinkedin}
-              color="rgb(255,255,255,.9)"
-            />
-          </SocialLink>
-        </SocialIcons>
-      </FooterContainer>
+      <footer className="bg-gray-900">
+        <div className="flex flex-col items-center p-12">
+          <p className="text-gray-100 mb-4">
+            © Jake Partusch. All rights reserved.
+          </p>
+          <div className="flex justify-between w-32">
+            <a
+              aria-label="Twitter"
+              rel="noopener"
+              href="https://twitter.com/JakePartusch"
+            >
+              <FontAwesomeIcon
+                size="lg"
+                icon={faTwitter}
+                className="text-gray-100"
+              />
+            </a>
+            <a
+              aria-label="GitHub"
+              rel="noopener"
+              href="https://github.com/JakePartusch"
+            >
+              <FontAwesomeIcon
+                size="lg"
+                icon={faGithub}
+                className="text-gray-100"
+              />
+            </a>
+            <a
+              aria-label="LinkedIn"
+              rel="noopener"
+              href="https://www.linkedin.com/in/jacob-partusch-4a181b79/"
+            >
+              <FontAwesomeIcon
+                size="lg"
+                icon={faLinkedin}
+                className="text-gray-100"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
     );
   }
 }
