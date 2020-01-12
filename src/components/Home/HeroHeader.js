@@ -41,7 +41,7 @@ export default class HeroHeader extends Component {
         <HeroContainer>
           <div>
             <img
-              className="mx-auto mb-8 h-40 rounded-full border-2 border-red-900 shadow"
+              className="mx-auto mb-8 h-40 rounded-full shadow-outline"
               alt="Jake Partusch"
               src={this.props.avatar}
             />

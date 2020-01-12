@@ -50,7 +50,10 @@ const Projects = () => {
     <ProjectList isWide={isWide}>
       {matchingProjects.map((project, i) => {
         return (
-          <div className="flex flex-col bg-white rounded-lg p-8 justify-between shadow-lg">
+          <div
+            key={project.title}
+            className="flex flex-col bg-white rounded-lg p-8 justify-between shadow-lg"
+          >
             <div className="flex flex-col justify-center items-center text-center mb-2">
               <h2 className="text-blue-900 text-xl font-bold mb-4">
                 {project.title}
@@ -62,8 +65,7 @@ const Projects = () => {
                 <a
                   href={project.siteLink}
                   target="_"
-                  noopener
-                  noreferrer
+                  rel="noopener"
                   className="rounded px-3 py-2 bg-white hover:bg-gray-200 text-gray-800 font-semibold leading-tight shadow-md mr-2"
                 >
                   Source
@@ -76,8 +78,7 @@ const Projects = () => {
                 <a
                   href={project.siteLink}
                   target="_"
-                  noopener
-                  noreferrer
+                  rel="noopener"
                   className="rounded px-3 py-2 bg-blue-500 hover:bg-blue-600 text-gray-100 font-semibold leading-tight shadow-md"
                 >
                   Website
