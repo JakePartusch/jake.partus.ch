@@ -46,18 +46,13 @@ const Bio = () => {
       <QuoteContainer>
         <Heading>About Me</Heading>
         <Quote>
-          <span role="img" aria-label="wave">
-            👋
-          </span>{" "}
-          My name is Jake, and I love all things JavaScript. I'm the Director of
-          Web and Mobile at Object Partners, where we help our clients to build
-          highly customized web applications. I feel most at home when I'm
-          either learning something new, or teaching others. When I'm not
-          writing code, I love to read, golf, and spend time with my family{" "}
-          <span role="img" aria-label="family">
-            👪
-          </span>
-          .
+          I am a software architect, speaker, and engineer who loves all things
+          JavaScript. I’m constantly on the search for new skills and techniques
+          to build performant, accessible and user-friendly web applications.
+          Currently, I am the Director of web and mobile at Object Partners
+          where I lead front-end product development for multiple clients. When
+          I’m not writing code, I love to read, golf, and spend time with my
+          family.
         </Quote>
       </QuoteContainer>
       <svg
