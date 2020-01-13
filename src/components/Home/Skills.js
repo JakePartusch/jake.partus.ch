@@ -24,7 +24,6 @@ const Skills = () => {
   }
   return (
     <section className="bg-gray-100 pb-12">
-      {true && (
         <div className="flex justify-between mx-5 md:mx-20">
           <FontAwesomeIcon
             icon={faJsSquare}
@@ -68,7 +67,6 @@ const Skills = () => {
             size={iconSize}
           />
         </div>
-      )}
       <Projects />
     </section>
   );
