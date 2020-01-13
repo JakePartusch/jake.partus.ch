@@ -20,7 +20,7 @@ export default class HeroHeader extends Component {
               alt="Jake Partusch"
               src={this.props.avatar}
             />
-            <h1 className="text-6xl font-light mb-4">Jake Partusch</h1>
+            <h1 className="text-6xl font-light mb-4 text-center">Jake Partusch</h1>
           </div>
           <div className="text-xl font-light">
             Dad.{" "}
