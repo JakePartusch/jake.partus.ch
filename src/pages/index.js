@@ -9,10 +9,10 @@ export default class Index extends React.Component {
       image => image.node.resize.src
     )[0];
     return (
-      <div>
+      <>
         <SEO title="Jake Partusch's Website" />
         <Home avatar={avatar} />
-      </div>
+      </>
     );
   }
 }

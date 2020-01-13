@@ -3,6 +3,6 @@ title: This Website
 content: This site is built with Gatsby, Emotion, and TailwindCSS
 siteLink: https://jake.partus.ch/
 sourceLink: https://github.com/JakePartusch/website
-rank: 6
+rank: 5
 stars: 2
 ---
