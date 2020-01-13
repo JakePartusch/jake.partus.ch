@@ -14,47 +14,59 @@ import useMedia from "use-media";
 
 const Skills = () => {
   const isWide = useMedia({ minWidth: "1000px" });
+  const isSmall = useMedia({ maxWidth: "600px" });
+  let iconSize = "3x";
+  if (isWide) {
+    iconSize = "4x";
+  }
+  if (isSmall) {
+    iconSize = "2x";
+  }
   return (
     <section className="bg-gray-100 pb-12">
-      {isWide && (
-        <div className="flex justify-between mx-20">
+      {true && (
+        <div className="flex justify-between mx-5 md:mx-20">
           <FontAwesomeIcon
             icon={faJsSquare}
             style={{ transform: "translateY(-15vh)" }}
             className="text-red-900"
-            size="4x"
+            size={iconSize}
           />
           <FontAwesomeIcon
             icon={faAws}
             style={{ transform: "translateY(-12.5vh)" }}
             className="text-red-900"
-            size="4x"
+            size={iconSize}
           />
           <FontAwesomeIcon
             icon={faNodeJs}
             style={{ transform: "translateY(-10vh)" }}
             className="text-red-900"
-            size="4x"
+            size={iconSize}
           />
           <FontAwesomeIcon
             icon={faDev}
             style={{ transform: "translateY(-7.5vh)" }}
             className="text-red-900"
-            size="4x"
+            size={iconSize}
           />
           <FontAwesomeIcon
             icon={faGithub}
             style={{ transform: "translateY(-5vh)" }}
             className="text-red-900"
-            size="4x"
+            size={iconSize}
           />
           <FontAwesomeIcon
             icon={faNpm}
             style={{ transform: "translateY(-2.5vh)" }}
             className="text-red-900"
-            size="4x"
+            size={iconSize}
           />
-          <FontAwesomeIcon icon={faReact} className="text-red-900" size="4x" />
+          <FontAwesomeIcon
+            icon={faReact}
+            className="text-red-900"
+            size={iconSize}
+          />
         </div>
       )}
       <Projects />

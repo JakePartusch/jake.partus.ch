@@ -5,22 +5,6 @@ import {
   faGithub,
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
-import styled from "@emotion/styled";
-
-const FooterContainer = styled.footer({
-  backgroundColor: "#1B1C1D"
-});
-
-const SocialIcons = styled.div({
-  display: "flex",
-  justifyContent: "flex-end",
-  alignItems: "center",
-  padding: "0.5em"
-});
-
-const SocialLink = styled.a({
-  margin: "0 0.25rem"
-});
 
 export default class Footer extends Component {
   render() {

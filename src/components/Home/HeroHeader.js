@@ -2,96 +2,70 @@
 import { jsx } from "@emotion/core";
 // eslint-disable-next-line
 import React, { Component } from "react";
-import styled from "@emotion/styled";
-
-const HeroSegment = styled.header({
-  display: "flex",
-  flexDirection: "column",
-  position: "relative",
-  border: "none",
-  textAlign: "center",
-  background: "linear-gradient(#102A43, #0F609B)",
-  backgroundSize: "cover",
-  height: "120vh"
-});
-
-const HeroContainer = styled.div({
-  flexDirection: "column",
-  justifyContent: "center",
-  alignContent: "center",
-  height: "100vh",
-  color: "#F0F4F8",
-  display: "flex"
-});
-
-const NameHeader = styled.h1({
-  fontSize: "4em",
-  fontWeight: 300
-});
-
-const HeroSubHeading = styled.div({
-  fontSize: "1.3em",
-  fontWeight: 300
-});
 
 export default class HeroHeader extends Component {
   render() {
     return (
-      <HeroSegment>
-        <HeroContainer>
+      <header
+        className="flex flex-col relative"
+        css={{
+          background: "linear-gradient(#102A43, #0F609B)",
+          height: "120vh"
+        }}
+      >
+        <div className="flex flex-col justify-center items-center h-screen text-gray-100 bg-cover">
           <div>
             <img
               className="mx-auto mb-8 h-40 rounded-full shadow-outline"
               alt="Jake Partusch"
               src={this.props.avatar}
             />
-            <NameHeader>Jake Partusch</NameHeader>
+            <h1 className="text-5xl font-light mb-4">Jake Partusch</h1>
           </div>
-          <HeroSubHeading>
+          <div className="text-xl font-light">
             Dad.{" "}
             <span role="img" aria-label="family">
               👪
             </span>
-          </HeroSubHeading>
-          <HeroSubHeading>
+          </div>
+          <div className="text-xl font-light">
             JavaScript Developer.{" "}
             <span role="img" aria-label="computer">
               💻
             </span>
-          </HeroSubHeading>
-          <HeroSubHeading>
+          </div>
+          <div className="text-xl font-light">
             Golden retriever lover.{" "}
             <span role="img" aria-label="dog">
               🐶
             </span>
-          </HeroSubHeading>
-          <HeroSubHeading>
+          </div>
+          <div className="text-xl font-light">
             Traveler.{" "}
             <span role="img" aria-label="airplane">
               ✈️
             </span>
-          </HeroSubHeading>
-          <HeroSubHeading>
+          </div>
+          <div className="text-xl font-light">
             Homebrewer.{" "}
             <span role="img" aria-label="beers">
               🍻
             </span>
-          </HeroSubHeading>
-        </HeroContainer>
+          </div>
+        </div>
         <svg
           css={{
-            position: "absolute",
-            bottom: "0",
-            width: "100%",
-            height: "20vh"
+            height: "20vh",
+            bottom: 0
           }}
+          className="absolute w-full text-gray-200"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
-          <polygon fill="#D9E2EC" points="0,100 100,0 100,100" />
+          <polygon fill="currentColor" points="0,100 100,0 100,100" />
         </svg>
-      </HeroSegment>
+      </header>
     );
   }
 }
