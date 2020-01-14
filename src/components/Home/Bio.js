@@ -1,11 +1,8 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-// eslint-disable-next-line
 import React from "react";
 
 const Bio = () => {
   return (
-    <section css={{ minHeight: "120vh" }} className="bg-gray-200 relative">
+    <section style={{ minHeight: "120vh" }} className="bg-gray-200 relative">
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-3xl md:text-5xl font-normal mb-12 text-gray-800">
           About Me
@@ -21,7 +18,7 @@ const Bio = () => {
         </blockquote>
       </div>
       <svg
-        css={{
+        style={{
           height: "20vh"
         }}
         className="absolute w-full text-gray-100 fill-current"
