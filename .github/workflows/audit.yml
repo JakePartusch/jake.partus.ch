@@ -20,7 +20,7 @@ jobs:
           npm run build
       - name: Bundle Size Analysis
         run: |
-          npm run bundlesize
+          npm run bundlewatch
         env:
           BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
       - name: Waiting for 200 from the Netlify Preview
