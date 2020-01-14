@@ -21,7 +21,7 @@ jobs:
       - name: Bundle Size Analysis
         uses: jackyef/bundlewatch-gh-action@0.0.4
         with:
-          build-script: npm run build
+          build-script: echo "Build step already run. Skipping..."
           bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
       - name: Waiting for 200 from the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
