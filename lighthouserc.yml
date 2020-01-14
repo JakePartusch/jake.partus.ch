@@ -2,4 +2,4 @@ ci:
   upload:
     target: "temporary-public-storage"
   assert:
-    budgetsFile: "./budgets.json"
+    budgetsFile: "budget.json"
