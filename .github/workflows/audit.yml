@@ -1,4 +1,4 @@
-name: Lighthouse
+name: Performance Audits
 
 on: [pull_request]
 
@@ -23,6 +23,7 @@ jobs:
         id: waitFor200
         with:
           site_name: "jakepartusch"
+          max_timeout: 90
       - name: Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.3.x

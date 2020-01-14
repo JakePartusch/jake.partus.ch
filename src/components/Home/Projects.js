@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -9,22 +8,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import useMedia from "use-media";
 
-const ProjectList = styled.ul(({ isWide }) => {
+
+const generateProjectListStyles = ({ isWide }) => {
   const columns = isWide ? 3 : 1;
   const maxWidth = isWide ? 1040 : 400;
   return {
     maxWidth,
-    margin: "auto",
-    paddingTop: "4rem",
-    paddingLeft: "1rem",
-    paddingRight: "1rem",
     display: "grid",
     gridTemplateColumns: `repeat( ${columns}, minmax(100px, 1fr))`,
     gridAutoRows: "1fr",
     gridGap: "12px",
     alignItems: "stretch"
   };
-});
+}
 
 const Projects = () => {
   const projectsData = useStaticQuery(graphql`
@@ -50,7 +46,7 @@ const Projects = () => {
   }));
   const isWide = useMedia({ minWidth: "1000px" });
   return (
-    <ProjectList isWide={isWide}>
+    <ul className="m-auto pt-16 px-4" style={generateProjectListStyles({ isWide })}>
       {matchingProjects.map((project, i) => {
         return (
           <li
@@ -100,7 +96,7 @@ const Projects = () => {
           </li>
         );
       })}
-    </ProjectList>
+    </ul>
   );
 };
 

@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-// eslint-disable-next-line
 import React, { Component } from "react";
 
 export default class HeroHeader extends Component {
@@ -8,7 +5,7 @@ export default class HeroHeader extends Component {
     return (
       <header
         className="flex flex-col relative"
-        css={{
+        style={{
           background: "linear-gradient(#102A43, #0F609B)",
           height: "120vh"
         }}
@@ -54,11 +51,10 @@ export default class HeroHeader extends Component {
           </div>
         </div>
         <svg
-          css={{
-            height: "20vh",
-            bottom: 0
+          style={{
+            height: "20vh"
           }}
-          className="absolute w-full text-gray-200"
+          className="absolute bottom-0 w-full text-gray-200"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
