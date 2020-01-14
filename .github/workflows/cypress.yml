@@ -23,6 +23,7 @@ jobs:
         id: waitFor200
         with:
           site_name: "jakepartusch"
+          max_timeout: 90
       - name: Cypress Tests
         run: |
           npm install -g cypress
