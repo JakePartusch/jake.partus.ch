@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Jake Partusch",
   "scripts": {
+    "bundlewatch": "bundlewatch",
     "cypress:open": "cypress open",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
@@ -43,6 +44,7 @@
     "@testing-library/react": "^9.4.0",
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.27",
+    "bundlewatch": "^0.2.5",
     "cypress": "^3.8.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
@@ -55,5 +57,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JakePartusch/website.git"
-  }
+  },
+  "bundlewatch" : {
+    "files": [
+        {
+            "path": "public/*.js",
+            "maxSize": "100kB"
+        }
+    ]
+}
 }
