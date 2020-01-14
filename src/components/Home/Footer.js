@@ -11,7 +11,7 @@ export default class Footer extends Component {
     return (
       <footer className="bg-gray-900">
         <div className="flex flex-col items-center p-12">
-          <p className="text-gray-100 mb-4">
+          <p className="text-gray-100 text-xl text-center mb-4">
             © Jake Partusch. All rights reserved.
           </p>
           <div className="flex justify-between w-32">
