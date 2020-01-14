@@ -40,12 +40,6 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/util/typography`
-      }
-    },
     `gatsby-plugin-postcss`
   ]
 };

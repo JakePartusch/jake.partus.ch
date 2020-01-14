@@ -4,10 +4,10 @@ const Bio = () => {
   return (
     <section style={{ minHeight: "120vh" }} className="bg-gray-200 relative">
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-3xl md:text-5xl font-normal mb-12 text-gray-800">
+        <h1 className="text-4xl md:text-6xl font-normal mb-12 text-gray-800">
           About Me
         </h1>
-        <blockquote className="border-none md:border-solid border-l-4 border-red-900 text-gray-900 mb-12 px-4 md:px-8 text-xl md:text-3xl font-light max-w-3xl">
+        <blockquote className="border-none md:border-solid border-l-4 border-red-900 text-gray-900 mb-12 px-4 md:px-8 text-2xl md:text-3xl font-light max-w-3xl">
           I am a software architect, speaker, and engineer who loves all things
           JavaScript. I’m constantly on the search for new skills and techniques
           to build performant, accessible and user-friendly web applications.

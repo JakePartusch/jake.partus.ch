@@ -19,31 +19,31 @@ export default class HeroHeader extends Component {
             />
             <h1 className="text-6xl font-light mb-4 text-center">Jake Partusch</h1>
           </div>
-          <div className="text-xl font-light">
+          <div className="text-2xl font-light">
             Dad.{" "}
             <span role="img" aria-label="family">
               👪
             </span>
           </div>
-          <div className="text-xl font-light">
+          <div className="text-2xl font-light">
             JavaScript Developer.{" "}
             <span role="img" aria-label="computer">
               💻
             </span>
           </div>
-          <div className="text-xl font-light">
+          <div className="text-2xl font-light">
             Golden retriever lover.{" "}
             <span role="img" aria-label="dog">
               🐶
             </span>
           </div>
-          <div className="text-xl font-light">
+          <div className="text-2xl font-light">
             Traveler.{" "}
             <span role="img" aria-label="airplane">
               ✈️
             </span>
           </div>
-          <div className="text-xl font-light">
+          <div className="text-2xl font-light">
             Homebrewer.{" "}
             <span role="img" aria-label="beers">
               🍻
