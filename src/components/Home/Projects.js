@@ -6,21 +6,6 @@ import {
   faExternalLinkSquareAlt,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
-import useMedia from "use-media";
-
-
-const generateProjectListStyles = ({ isWide }) => {
-  const columns = isWide ? 3 : 1;
-  const maxWidth = isWide ? 1040 : 400;
-  return {
-    maxWidth,
-    display: "grid",
-    gridTemplateColumns: `repeat( ${columns}, minmax(100px, 1fr))`,
-    gridAutoRows: "1fr",
-    gridGap: "12px",
-    alignItems: "stretch"
-  };
-}
 
 const Projects = () => {
   const projectsData = useStaticQuery(graphql`
@@ -44,9 +29,16 @@ const Projects = () => {
   const matchingProjects = projectsData.allMarkdownRemark.edges.map(edge => ({
     ...edge.node.frontmatter
   }));
-  const isWide = useMedia({ minWidth: "1000px" });
   return (
-    <ul className="m-auto pt-16 px-4" style={generateProjectListStyles({ isWide })}>
+    <ul
+      className="m-auto pt-16 px-4 md:px-20 lg:px-32"
+      style={{
+        display: "grid",
+        gridTemplateColumns: `repeat(auto-fit, minmax(300px, 1fr))`,
+        gridGap: "12px",
+        alignItems: "stretch"
+      }}
+    >
       {matchingProjects.map((project, i) => {
         return (
           <li
