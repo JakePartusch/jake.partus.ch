@@ -10,7 +10,7 @@ export default class Index extends React.Component {
     )[0];
     return (
       <>
-        <SEO title="Jake Partusch's Website" />
+        <SEO title="Home" />
         <Home avatar={avatar} />
       </>
     );
