@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HeroHeader from "./HeroHeader";
 import Bio from "./Bio";
 import Skills from "./Skills";
-import Footer from "./Footer";
+import Footer from "../common/Footer";
 
 export default class Home extends Component {
   render() {

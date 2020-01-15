@@ -5,16 +5,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogTemplate = path.resolve(`src/templates/Blog.js`);
   const result = await graphql(`
     query BlogQuery {
-      allDevArticles {
+      allMarkdownRemark(filter: {frontmatter: {type: {eq: "blog"}}}) {
         edges {
           node {
-            article {
-              title
-              body_markdown
-              id
-              cover_image
+            frontmatter {
+              publishDate
               slug
+              title
+              reactions
             }
+            html
+            timeToRead
           }
         }
       }
@@ -25,12 +26,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
-  result.data.allDevArticles.edges.forEach(({ node }) => {
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `/blog/${node.article.slug}`,
+      path: `/blog/${node.frontmatter.slug}`,
       component: blogTemplate,
       context: {
-        ...node.article
+        ...node
       }
     });
   });
