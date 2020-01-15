@@ -2,14 +2,14 @@ const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-  const blogTemplate = path.resolve(`src/templates/Blog.js`);
+  const blogTemplate = path.resolve(`src/templates/BlogPost.js`);
   const result = await graphql(`
     query BlogQuery {
       allMarkdownRemark(filter: {frontmatter: {type: {eq: "blog"}}}) {
         edges {
           node {
             frontmatter {
-              publishDate
+              publishDate(formatString: "MMMM DD, YYYY")
               slug
               title
               reactions

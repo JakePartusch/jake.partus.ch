@@ -16,14 +16,14 @@ const Blogs = props => {
     <div className="min-h-screen flex flex-col justify-between bg-gray-100">
       <main>
         <SEO title="Blog" />
-        <header className="bg-blue-900 py-4">
+        <header className="bg-blue-900 py-2">
           <div className="max-w-4xl m-auto px-2 flex items-center ">
             <img
               className="h-12 rounded-full shadow-outline mr-4"
               alt="Jake Partusch"
               src={avatar}
             />
-            <h1 className="text-2xl text-gray-100">Blog</h1>
+            <h1 className="text-2xl font-bold text-gray-100">Blog</h1>
           </div>
         </header>
         <div className="max-w-4xl m-auto my-8">

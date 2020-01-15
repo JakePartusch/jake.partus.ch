@@ -3,7 +3,7 @@ type: blog
 slug: the-best-way-to-automate-performance-checks-in-github-584e
 title: The Best Way to Automate Performance Checks in GitHub
 publishDate: 2020-01-15
-reactions: 12
+reactions: 19
 ---
 We all want to build fast websites. But we don't want to manually run performance checks on every build. Right? Moving performance checks into a continuous integration process removes this manual audit and alerts us when the web performance of our application may be degrading. In this article, we'll discuss a great way to automate performance checks in GitHub projects with Lighthouse, Page Speed Insights and GitHub Actions.
 
@@ -31,7 +31,7 @@ Google also provides a [CLI](https://github.com/GoogleChrome/lighthouse-ci) for 
 
 After globally installing (`npm install -g @lhci/cli`) the npm package, we can use the `lhci` script to trigger Lighthouse audits. By using `--upload.target` and `--collect.url`, we can run the audit against a URL and have the HTML result uploaded to a temporary web page.
 
-```
+```bash
 $ lhci autorun --upload.target=temporary-public-storage --collect.url=https://jake.partus.ch
 ✅  .lighthouseci/ directory writable
 ⚠️   Configuration file not found
@@ -55,7 +55,7 @@ Done running autorun.
 
 If a URL is not specified, the CLI will attempt to find the static build directory and host the application on a local web server. In the following example, it was able to determine that the build directory was named `public`, host the website on port 52259, and then run the audits against the local build.
 
-```cli
+```bash
 $ lhci autorun --upload.target=temporary-public-storage
 ✅  .lighthouseci/ directory writable
 ⚠️   Configuration file not found
