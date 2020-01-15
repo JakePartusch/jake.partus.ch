@@ -6,9 +6,7 @@ publishDate: 2020-01-06
 reactions: 37
 ---
 As web developers, we are often tasked with creating various interactive components in our web applications. On occasion, it might seem like a tempting solution to add a click handler to an existing `div`, or to create a custom `<Button/>` component out of non-semantic elements.
-
-{% twitter 1176161245352927237 %}
-
+<br/><br/>
 In this article I hope to illustrate the "hidden" bugs that are created by _not_ using a `button` as a button and the amount of code that is required to overcome these deficits. 
 
 
@@ -29,8 +27,6 @@ const Button = () => {
 # 2. Adding a Role, tabindex
 
 We can inch towards and accessible solution by adding a [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) and a role to the `div`. The [button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role) will tell screen readers to announce this element as a button, and hint that it is actionable. Setting the `tabindex="0"` (`tabIndex={0}` in React), allows this element to be focused by the keyboard. Even so, our custom `div` can still not be triggered by the keyboard.
-
-{% twitter 1183020913509502978 %}
 
 ```jsx
 //DO NOT USE: non-accessible implementation

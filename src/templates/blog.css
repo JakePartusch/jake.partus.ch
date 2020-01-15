@@ -12,9 +12,35 @@
   @apply text-xl font-bold my-2;
 }
 
+.blog-post h3 {
+  @apply font-bold my-2;
+}
+
 .blog-post pre,
 img {
   @apply my-8 mx-auto shadow-lg;
+}
+
+.blog-post a {
+  @apply text-blue-500;
+}
+
+.blog-post a:hover {
+  @apply text-blue-700 underline;
+}
+
+.blog-post code {
+  @apply p-1 bg-gray-200 text-blue-800;
+}
+
+.blog-post pre code {
+  color: inherit;
+  background-color: #1E1E1E;
+}
+
+.blog-post ul {
+  list-style-type: square;
+  @apply ml-8;
 }
 
 @screen md {

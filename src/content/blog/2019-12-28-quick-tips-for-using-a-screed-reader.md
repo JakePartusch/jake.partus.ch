@@ -14,8 +14,8 @@ A great first step in _finding_ accessibility issues in a website is by becoming
 
 # Starting VoiceOver
 For the purposes of this article, we'll focus on using VoiceOver with MacOS. VoiceOver works best with Safari, but also works well with both Chrome and Firefox. Luckily, starting VoiceOver is super simple:
-
-Turn VoiceOver on/off &rarr; `⌘ + F5`
+<br/><br/>
+Turn VoiceOver on/off &rarr; `⌘ + F5`<br/>
 
 <img alt="VoiceOver welcome screen" width="400px" src="https://thepracticaldev.s3.amazonaws.com/i/p7z3qx2ucrmxsoeuo9mk.png"/>
 
@@ -26,18 +26,18 @@ After selecting "Use VoiceOver" the computer will start speaking the highlighted
 
 # VoiceOver Keys
 
-The VoiceOver command keys (VO) are required to interact with VoiceOver shortcuts:
-`⌃ + ⌥ (Control + Option)`
-or
-`⇪ (Caps Lock)`
-
+The VoiceOver command keys (VO) are required to interact with VoiceOver shortcuts:<br/><br/>
+`⌃ + ⌥ (Control + Option)`<br/>
+or<br/>
+`⇪ (Caps Lock)`<br/>
+<br/>
 The following shortcuts will utilize the VoiceOver command keys to interact with VoiceOver. 
 
 
 # Navigation
-Read next item &rarr; `VO + Right Arrow`
-Read previous item &rarr; `VO + Left Arrow`
-
+Read next item &rarr; `VO + Right Arrow`<br/>
+Read previous item &rarr; `VO + Left Arrow`<br/>
+<br/>
 With these two commands, it is possible to navigate through the entire website as a VoiceOver user would. Screen readers not only focus on buttons and links, but also elements with text content. 
 
 <img alt="navigating VoiceOver with arrow keys" width="400px" src="https://thepracticaldev.s3.amazonaws.com/i/66p9s878bujkol9ismun.gif"/>
@@ -49,38 +49,38 @@ The following shortcuts are not mandatory for using VoiceOver, but can be useful
 
 ## Lock into Command Mode
 Optionally, it is possible to lock into VoiceOver command mode, with the following shortcut:
-
+<br/><br/>
 Lock into command mode &rarr; `VO + ;`
-
+<br/><br/>
 After locking into command mode, it is not necessary to use the VoiceOver command keys, but this will restrict the ability to type normally as many keys are tied to VoiceOver shortcuts.
 
 ## VoiceOver Rotor
 The Rotor allows the user to quickly navigate to different sections of the website and provides a useful widget to visualize the content of the web page. Navigation within the rotor can be accomplished with the arrow keys.
-
+<br/><br/>
 Start the Rotor &rarr;`VO + U` 
-
+<br/>
 <img alt="Navigating a website with the rotor" width="400px" src="https://thepracticaldev.s3.amazonaws.com/i/3efjbhb7hd1ztfh48ytn.gif"/>
 
 ## Navigation Shortcuts
 
 Although this can also be accomplished with the rotor, sometimes it is useful to navigate to headings or links with the following commands:
-
-Next Heading &rarr; `VO + ⌘ + H`
-Previous Heading &rarr; `VO + ⌘ + ⇧ + H`
-Next Link &rarr; `VO + ⌘ + L`
-Previous Link &rarr; `VO + ⌘ + ⇧ + L`
+<br/>
+Next Heading &rarr; `VO + ⌘ + H`<br/>
+Previous Heading &rarr; `VO + ⌘ + ⇧ + H`<br/>
+Next Link &rarr; `VO + ⌘ + L`<br/>
+Previous Link &rarr; `VO + ⌘ + ⇧ + L`<br/>
 
 # Useful Links/Further Reading
 
-W3 references
-[WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/)
-[WCAG 2.1](https://www.w3.org/TR/WCAG21/)
+W3 references<br/>
+[WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/)<br/>
+[WCAG 2.1](https://www.w3.org/TR/WCAG21/)<br/><br/>
 
-VoiceOver references
-[VoiceOver complete command list](https://www.apple.com/voiceover/info/guide/_1131.html)
-[Deque's printable quick reference PDF](https://dequeuniversity.com/assets/pdf/screenreaders/voiceover-macos-guide.pdf)
+VoiceOver references<br/>
+[VoiceOver complete command list](https://www.apple.com/voiceover/info/guide/_1131.html)<br/>
+[Deque's printable quick reference PDF](https://dequeuniversity.com/assets/pdf/screenreaders/voiceover-macos-guide.pdf)<br/><br/>
 
-Accessibility Testing
+Accessibility Testing<br/>
 [aXe Accessibility testing tool](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd)
 
 

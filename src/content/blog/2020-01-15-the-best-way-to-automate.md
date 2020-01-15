@@ -3,21 +3,22 @@ type: blog
 slug: the-best-way-to-automate-performance-checks-in-github-584e
 title: The Best Way to Automate Performance Checks in GitHub
 publishDate: 2020-01-15
-reactions: 19
+reactions: 33
 ---
 We all want to build fast websites. But we don't want to manually run performance checks on every build. Right? Moving performance checks into a continuous integration process removes this manual audit and alerts us when the web performance of our application may be degrading. In this article, we'll discuss a great way to automate performance checks in GitHub projects with Lighthouse, Page Speed Insights and GitHub Actions.
 
 # Lighthouse
 
 Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source, automated tool for improving the quality of web pages. Lighthouse can be run locally with developer tools, or remotely via [web.dev](https://web.dev) and provides users with 5 distinct scoring categories.
-
+<br/><br/>
 - Performance
 - Accessibility
 - Best Practices
 - SEO
 - Progressive Web App
+<br/><br/>
 
-An overall score is given for each category along with issues and recommendations to improve the scores.
+<p>An overall score is given for each category along with issues and recommendations to improve the scores.</p>
 
 ![A screenshot of the Lighthouse scores](https://thepracticaldev.s3.amazonaws.com/i/z1szvs5bt04lwel9pozv.png)
 
@@ -88,18 +89,16 @@ Done running autorun.
 # Page Speed Insights
 
 [Page Speed Insights](https://developers.google.com/speed/docs/insights/v5/about#lab) is another tool created by Google which combines Lighthouse performance scores with real-world performance data. 
-
-For more in-depth information on the benefits and APIs available via Page Speed Insights, read this 👇
-
-{% link https://dev.to/addyosmani/monitoring-performance-with-the-pagespeed-insights-api-33k7 %}
-
+<br/><br/>
+For more in-depth information on the benefits and APIs available via Page Speed Insights, read this: [https://dev.to/addyosmani/monitoring-performance-with-the-pagespeed-insights-api-33k7](https://dev.to/addyosmani/monitoring-performance-with-the-pagespeed-insights-api-33k7)
+<br/><br/>
 Page Speed Insights focuses solely on the performance aspects of a webpage. While this is useful, we should try to utilize _both_ Lighthouse and Page Speed Insights to get a complete picture on the performance and other characteristics of our website.
 
 
 # GitHub Actions
 
 _GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub._
-
+<br/><br/>
 [GitHub Actions](https://github.com/features/actions) is a new product from GitHub which allows the configuration of a custom CI/CD pipeline for your project. GitHub Actions can be run for individual pull requests, whenever code is pushed, or a whole host of other [events](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows).
 
 # Running Lighthouse with a GitHub Action
@@ -242,8 +241,8 @@ jobs:
 Now we have a complete suit of performance audits that run with each Pull Request in GitHub 💯. To see all of this in practice, feel free to visit my [personal website repo](https://github.com/JakePartusch/website).
 
 ## Reference Links
-[Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
-[Lighthouse CI GitHub status checks](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#github-status-checks)
-[Page Speed Insights (library)](https://github.com/GoogleChromeLabs/psi)
-[Page Speed Insights GitHub Action (shameless plug)](https://github.com/JakePartusch/psi-action)
-[Wait for Netlify GitHub Action (shameless plug)](https://github.com/JakePartusch/wait-for-netlify-action)
+[Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)<br/>
+[Lighthouse CI GitHub status checks](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#github-status-checks)<br/>
+[Page Speed Insights (library)](https://github.com/GoogleChromeLabs/psi)<br/>
+[Page Speed Insights GitHub Action (shameless plug)](https://github.com/JakePartusch/psi-action)<br/>
+[Wait for Netlify GitHub Action (shameless plug)](https://github.com/JakePartusch/wait-for-netlify-action)<br/>
