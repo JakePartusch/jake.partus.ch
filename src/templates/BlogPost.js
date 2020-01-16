@@ -1,14 +1,16 @@
 import React from "react";
 import Footer from "../components/common/Footer";
-import "./blog.css";
+import SEO from "../components/SEO";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import "./blog.css";
 
 const BlogPost = props => {
   const blogHtml = { __html: props.pageContext.html };
   const post = props.pageContext;
   return (
     <div className="pt-8 md:pt-16 min-w-full bg-gray-100 text-gray-900 md:text-lg">
+      <SEO title={post.frontmatter.title} />
       <main className="mb-12">
         <header className="text-center max-w-4xl mx-auto mb-8">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
