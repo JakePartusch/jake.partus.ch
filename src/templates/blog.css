@@ -16,9 +16,16 @@
   @apply font-bold my-2;
 }
 
-.blog-post pre,
-img {
+.blog-post pre {
   @apply my-8 mx-auto shadow-lg;
+}
+
+.blog-post img {
+  @apply my-8 mx-auto shadow-lg;
+}
+
+.blog-post p {
+  @apply leading-relaxed mb-4;
 }
 
 .blog-post a {
@@ -35,12 +42,12 @@ img {
 
 .blog-post pre code {
   color: inherit;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
 .blog-post ul {
   list-style-type: square;
-  @apply ml-8;
+  @apply ml-8 mb-2;
 }
 
 @screen md {

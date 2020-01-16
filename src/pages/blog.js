@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import SEO from "../components/SEO";
 import Footer from "../components/common/Footer";
@@ -16,28 +16,36 @@ const Blogs = props => {
     <div className="min-h-screen flex flex-col justify-between bg-gray-100">
       <main>
         <SEO title="Blog" />
-        <header className="bg-blue-900 py-2">
-          <div className="max-w-4xl m-auto px-2 flex items-center ">
+        <header className="pt-8">
+          <Link
+            to="/"
+            className="max-w-4xl mx-auto px-4 md:px-8 flex items-center hover:underline"
+          >
             <img
               className="h-12 rounded-full shadow-outline mr-4"
               alt="Jake Partusch"
               src={avatar}
             />
-            <h1 className="text-2xl font-bold text-gray-100">Blog</h1>
-          </div>
+            <h1 className="text-2xl font-bold text-gray-900">Jake's Blog</h1>
+          </Link>
         </header>
         <div className="max-w-4xl m-auto my-8">
+          <div className="px-4 md:px-8 font-bold text-2xl text-gray-900 mb-6 underline">
+            Latest Posts
+          </div>
           {posts.map(post => (
             <article className="flex flex-col justify-between mb-6 px-4 md:px-8">
               <header>
-                <h2 className="font-bold text-xl text-gray-700 hover:text-blue-700 hover:underline cursor-pointer">
+                <h2 className="font-bold text-2xl text-blue-700 hover:text-blue-800 hover:underline cursor-pointer">
                   <a href={`/blog/${post.slug}`}>{post.title}</a>
                 </h2>
               </header>
-              <p className="text-gray-900">{post.publishDate}</p>
+              <p className="text-gray-900 text-xl">{post.publishDate}</p>
               <div className="flex">
-                <p className="text-gray-900 mr-4">{post.timeToRead} min read</p>
-                <div className="text-red-900">
+                <p className="text-gray-900 mr-4 text-xl">
+                  {post.timeToRead} min read
+                </p>
+                <div className="text-red-900 text-xl">
                   <span className="mr-2">{post.reactions}</span>
                   <FontAwesomeIcon icon={faHeart} />
                 </div>

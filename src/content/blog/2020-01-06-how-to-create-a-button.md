@@ -5,10 +5,10 @@ title: How to create a <button> with a <div> in React (and why you shouldn't)
 publishDate: 2020-01-06
 reactions: 37
 ---
-As web developers, we are often tasked with creating various interactive components in our web applications. On occasion, it might seem like a tempting solution to add a click handler to an existing `div`, or to create a custom `<Button/>` component out of non-semantic elements.
-<br/><br/>
-In this article I hope to illustrate the "hidden" bugs that are created by _not_ using a `button` as a button and the amount of code that is required to overcome these deficits. 
 
+As web developers, we are often tasked with creating various interactive components in our web applications. On occasion, it might seem like a tempting solution to add a click handler to an existing `div`, or to create a custom `<Button/>` component out of non-semantic elements.
+
+In this article I hope to illustrate the "hidden" bugs that are created by _not_ using a `button` as a button and the amount of code that is required to overcome these deficits.
 
 # 1. onClick handler
 
@@ -17,11 +17,10 @@ This is the obvious first step to add an interaction to a `div`. But, as its nam
 ```jsx
 //DO NOT USE: non-accessible implementation
 const Button = () => {
-  const onClick = () => console.log('clicked');
+  const onClick = () => console.log("clicked");
 
-  return <div onClick={onClick}>My Button</div>
-}
-
+  return <div onClick={onClick}>My Button</div>;
+};
 ```
 
 # 2. Adding a Role, tabindex
@@ -31,17 +30,21 @@ We can inch towards and accessible solution by adding a [tabindex](https://devel
 ```jsx
 //DO NOT USE: non-accessible implementation
 const Button = () => {
-  const onClick = () => console.log('clicked');
+  const onClick = () => console.log("clicked");
 
-  return <div role="button" tabIndex={0} onClick={onClick}>My Button</div>
-}
+  return (
+    <div role="button" tabIndex={0} onClick={onClick}>
+      My Button
+    </div>
+  );
+};
 ```
 
 # 3. Keyboard events
 
 When a `button` is focused, it can be triggered by either the `SPACE` or `ENTER` key. To bring this functionality to our `div` button, we need to implement `onKeyPress` and watch for those specific events. Then, we can manually forward matching events to our `onClick` handler.
 
-By implementing these first three steps, our `div` button is now mostly accessible. 
+By implementing these first three steps, our `div` button is now mostly accessible.
 
 ```jsx
 const Button = () => {
@@ -60,12 +63,7 @@ const Button = () => {
     }
   };
   return (
-    <div
-      role="button"
-      onClick={onClick}
-      tabIndex={0}
-      onKeyPress={onKeyPress}
-    >
+    <div role="button" onClick={onClick} tabIndex={0} onKeyPress={onKeyPress}>
       My Button
     </div>
   );
@@ -143,10 +141,7 @@ const Button = props => {
   };
 
   return (
-    <button
-      onClick={onClick}
-      {...props}
-    >
+    <button onClick={onClick} {...props}>
       My button Button
     </button>
   );
