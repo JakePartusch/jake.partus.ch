@@ -3,7 +3,7 @@ type: blog
 slug: the-best-way-to-automate-performance-checks-in-github-584e
 title: The Best Way to Automate Performance Checks in GitHub
 publishDate: 2020-01-15
-reactions: 38
+reactions: 39
 ---
 
 We all want to build fast websites. But we don't want to manually run performance checks on every build. Right? Moving performance checks into a continuous integration process removes this manual audit and alerts us when the web performance of our application may be degrading. In this article, we'll discuss a great way to automate performance checks in GitHub projects with Lighthouse, Page Speed Insights and GitHub Actions.

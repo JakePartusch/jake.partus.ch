@@ -18,7 +18,7 @@ const BlogPost = props => {
           </h1>
           <p className="text-gray-900">{post.frontmatter.publishDate}</p>
           <p className="text-gray-900 mr-4">{post.timeToRead} min read</p>
-          <div className="text-red-900">
+          <div className="text-red-900 w-12 mx-auto">
             <span className="mr-2">{post.frontmatter.reactions}</span>
             <FontAwesomeIcon icon={faHeart} />
           </div>
