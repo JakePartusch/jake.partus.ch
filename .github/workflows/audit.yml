@@ -32,7 +32,7 @@ jobs:
       - name: Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ steps.waitFor200.outputs.url }} || echo "LHCI failed!"
+          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ steps.waitFor200.outputs.url }} --collect.url=${{ steps.waitFor200.outputs.url }}/blog --collect.url=${{ steps.waitFor200.outputs.url }}/blog/the-best-way-to-automate-performance-checks-in-github-584e
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
       - name: Running Page Speed Insights
