@@ -1,8 +1,8 @@
 ---
+title: The Best Way to Automate Performance Checks in GitHub
 type: blog
 slug: the-best-way-to-automate-performance-checks-in-github-584e
-title: The Best Way to Automate Performance Checks in GitHub
-publishDate: 2020-01-15
+publishDate: '2020-01-15T00:00:00.000Z'
 reactions: 39
 ---
 

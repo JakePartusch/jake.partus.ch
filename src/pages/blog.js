@@ -6,8 +6,10 @@ import "./index.css";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Img from "gatsby-image";
+import { withPlugin } from "tinacms";
+import { RemarkCreatorPlugin } from "gatsby-tinacms-remark";
 
-const Blogs = props => {
+const BlogIndex = props => {
   const posts = props.data.allMarkdownRemark.edges.map(post => ({
     ...post.node,
     ...post.node.frontmatter
@@ -89,4 +91,23 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Blogs;
+const dateString = new Date().toISOString().split("T")[0];
+
+const CreatePostPlugin = new RemarkCreatorPlugin({
+  label: "Create Post",
+  fields: [
+    { name: "title", label: "Title", component: "text", required: true }
+  ],
+  filename: form => {
+    let slug = form.title.replace(/\s+/, "-").toLowerCase();
+    return `src/content/blog/${dateString}-${slug}.md`;
+  },
+  frontmatter: form => ({
+    type: "blog",
+    title: form.title,
+    publishDate: dateString,
+    slug: form.title.replace(/\s+/, "-").toLowerCase()
+  })
+});
+
+export default withPlugin(BlogIndex, CreatePostPlugin);
