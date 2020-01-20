@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Jake Partusch's Website`,
-    description: `A place to showcase stuff made by me`,
+    title: `Jake Partusch`,
+    description: `A place to showcase stuff made by Jake`,
     author: `@JakePartusch`,
     siteUrl: "https://jake.partus.ch"
   },
@@ -43,13 +43,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
-          `gatsby-remark-vscode`,
+          `gatsby-remark-vscode`
         ]
       }
     },
