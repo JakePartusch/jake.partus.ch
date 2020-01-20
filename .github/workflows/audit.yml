@@ -39,4 +39,4 @@ jobs:
         id: psi
         with:
           url: ${{ steps.waitFor200.outputs.url }}
-          threshold: 90
+          threshold: 85
