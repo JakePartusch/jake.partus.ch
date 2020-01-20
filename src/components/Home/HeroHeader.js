@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faPenSquare } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "gatsby";
 
 export default class HeroHeader extends Component {
   render() {
@@ -17,37 +21,46 @@ export default class HeroHeader extends Component {
               alt="Jake Partusch"
               src={this.props.avatar}
             />
-            <h1 className="text-6xl font-light mb-4 text-center">Jake Partusch</h1>
+            <h1 className="text-6xl font-light mb-4 text-center">
+              Jake Partusch
+            </h1>
           </div>
-          <div className="text-2xl font-light">
-            Dad.{" "}
-            <span role="img" aria-label="family">
-              👪
-            </span>
-          </div>
-          <div className="text-2xl font-light">
-            JavaScript Developer.{" "}
-            <span role="img" aria-label="computer">
-              💻
-            </span>
-          </div>
-          <div className="text-2xl font-light">
-            Golden retriever lover.{" "}
-            <span role="img" aria-label="dog">
-              🐶
-            </span>
-          </div>
-          <div className="text-2xl font-light">
-            Traveler.{" "}
-            <span role="img" aria-label="airplane">
-              ✈️
-            </span>
-          </div>
-          <div className="text-2xl font-light">
-            Homebrewer.{" "}
-            <span role="img" aria-label="beers">
-              🍻
-            </span>
+          <div>
+            <a
+              className="inline-block bg-gray-200 rounded-full p-2 m-4"
+              href="https://github.com/JakePartusch"
+              rel="noopener noreferrer"
+              aria-label="Jake's GitHub"
+            >
+              <FontAwesomeIcon
+                size="2x"
+                icon={faGithub}
+                className="text-blue-900"
+              />
+            </a>
+            <a
+              className="inline-block bg-gray-200 rounded-full p-2 m-4"
+              href="https://twitter.com/JakePartusch"
+              rel="noopener noreferrer"
+              aria-label="Jake's Twitter"
+            >
+              <FontAwesomeIcon
+                size="2x"
+                icon={faTwitter}
+                className="text-blue-900"
+              />
+            </a>
+            <Link
+              className="inline-block bg-gray-200 rounded-full p-2 m-4"
+              to="/blog"
+              aria-label="Jake's Blog"
+            >
+              <FontAwesomeIcon
+                size="2x"
+                icon={faPenSquare}
+                className="text-blue-900"
+              />
+            </Link>
           </div>
         </div>
         <svg
