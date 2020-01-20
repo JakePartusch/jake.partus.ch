@@ -5,13 +5,14 @@ import Footer from "../components/common/Footer";
 import "./index.css";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Img from "gatsby-image";
 
 const Blogs = props => {
   const posts = props.data.allMarkdownRemark.edges.map(post => ({
     ...post.node,
     ...post.node.frontmatter
   }));
-  const avatar = props.data.avatar.edges.map(image => image.node.resize.src)[0];
+  const avatar = props.data.file.childImageSharp.fluid;
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gray-100">
       <main>
@@ -21,10 +22,10 @@ const Blogs = props => {
             to="/"
             className="max-w-4xl mx-auto px-4 md:px-8 flex items-center hover:underline"
           >
-            <img
-              className="h-12 rounded-full shadow-outline mr-4"
+            <Img
+              className="h-12 w-12 rounded-full shadow-outline mr-4"
               alt="Jake Partusch"
-              src={avatar}
+              fluid={avatar}
             />
             <h1 className="text-2xl font-bold text-gray-900">Jake's Blog</h1>
           </Link>
@@ -78,14 +79,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    avatar: allImageSharp(
-      filter: { original: { src: { regex: "/avatar/" } } }
-    ) {
-      edges {
-        node {
-          resize(width: 150, height: 150) {
-            src
-          }
+    file(relativePath: { eq: "avatar.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 150) {
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
