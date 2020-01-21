@@ -10,7 +10,10 @@ import {
 const Projects = () => {
   const projectsData = useStaticQuery(graphql`
     query ProjectsQuery {
-      allMarkdownRemark(sort: { fields: frontmatter___rank }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { type: { ne: "blog" } } }
+        sort: { fields: frontmatter___rank }
+      ) {
         edges {
           node {
             frontmatter {
