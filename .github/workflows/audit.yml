@@ -19,9 +19,8 @@ jobs:
         run: |
           npm run build
       - name: Bundle Size Analysis
-        uses: jackyef/bundlewatch-gh-action@0.0.4
+        uses: jackyef/bundlewatch-gh-action@0.0.5
         with:
-          build-script: echo "Build step already run. Skipping..."
           bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
       - name: Waiting for 200 from the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
@@ -40,4 +39,4 @@ jobs:
         id: psi
         with:
           url: ${{ steps.waitFor200.outputs.url }}
-          threshold: 90
+          threshold: 85

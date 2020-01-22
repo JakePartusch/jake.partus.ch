@@ -5,17 +5,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogTemplate = path.resolve(`src/templates/BlogPost.js`);
   const result = await graphql(`
     query BlogQuery {
-      allMarkdownRemark(filter: {frontmatter: {type: {eq: "blog"}}}) {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "blog" } } }) {
         edges {
           node {
             frontmatter {
-              publishDate(formatString: "MMMM DD, YYYY")
               slug
-              title
-              reactions
             }
-            html
-            timeToRead
           }
         }
       }
@@ -31,7 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/blog/${node.frontmatter.slug}`,
       component: blogTemplate,
       context: {
-        ...node
+        slug: node.frontmatter.slug
       }
     });
   });

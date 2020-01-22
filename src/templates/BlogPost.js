@@ -3,11 +3,12 @@ import Footer from "../components/common/Footer";
 import SEO from "../components/SEO";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { remarkForm } from "gatsby-tinacms-remark";
 import "./blog.css";
 
-const BlogPost = props => {
-  const blogHtml = { __html: props.pageContext.html };
-  const post = props.pageContext;
+const BlogPostTemplate = ({ data }) => {
+  const blogHtml = { __html: data.markdownRemark.html };
+  const post = data.markdownRemark;
   return (
     <div className="pt-8 md:pt-16 min-w-full bg-gray-100 text-gray-900 md:text-lg">
       <SEO title={post.frontmatter.title} />
@@ -20,7 +21,7 @@ const BlogPost = props => {
           <p className="text-gray-900 mr-4">{post.timeToRead} min read</p>
           <div className="text-red-900">
             <span className="mr-2">{post.frontmatter.reactions}</span>
-            <FontAwesomeIcon icon={faHeart} className="w-5 inline-block"/>
+            <FontAwesomeIcon icon={faHeart} className="w-5 inline-block" />
           </div>
         </header>
         <article
@@ -33,4 +34,20 @@ const BlogPost = props => {
   );
 };
 
-export default BlogPost;
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      ...TinaRemark
+      frontmatter {
+        publishDate(formatString: "MMMM DD, YYYY")
+        slug
+        title
+        reactions
+      }
+      html
+      timeToRead
+    }
+  }
+`;
+
+export default remarkForm(BlogPostTemplate);
