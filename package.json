@@ -33,7 +33,7 @@
     "gatsby-remark-copy-linked-files": "^2.1.36",
     "gatsby-remark-images": "^3.1.42",
     "gatsby-remark-responsive-iframe": "^2.2.31",
-    "gatsby-remark-smartypants": "^2.1.20",
+    "gatsby-remark-smartypants": "^2.1.21",
     "gatsby-remark-vscode": "^1.4.0",
     "gatsby-source-dev": "^0.1.4",
     "gatsby-source-filesystem": "^2.1.46",
