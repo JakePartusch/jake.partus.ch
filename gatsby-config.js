@@ -59,15 +59,16 @@ module.exports = {
         name: `Jake Partusch`,
         short_name: `Jake`,
         start_url: `/`,
-        background_color: `#999`,
-        theme_color: `#999`,
+        background_color: `#f0f4f8`,
+        theme_color: `#f0f4f8`,
         display: `minimal-ui`,
         icon: `src/images/avatar.jpg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-offline`
   ]
 };
