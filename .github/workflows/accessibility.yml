@@ -8,11 +8,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Install required Linux packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install libgbm-dev
+          sudo apt-get install xvfb
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Install
+      - name: Install npm packages
         run: |
           npm ci
       - name: Build
@@ -24,12 +29,7 @@ jobs:
         with:
           site_name: "jakepartusch"
           max_timeout: 90
-      - name: install required packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install libgbm-dev
-          sudo apt-get install xvfb
       - name: Accessibility Audits
         run: |
-          npm install -g @jakepartusch/lumberjack@0.2.0
-          xvfb-run --auto-servernum lumberjack --url https://jake.partus.ch
+          npm install -g @jakepartusch/lumberjack
+          xvfb-run --auto-servernum lumberjack --url ${{ steps.waitFor200.outputs.url }}
