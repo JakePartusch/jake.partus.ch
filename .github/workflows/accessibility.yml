@@ -31,5 +31,5 @@ jobs:
           sudo apt-get install xvfb
       - name: Accessibility Audits
         run: |
-          npm install -g @jakepartusch/lumberjack@0.3.0
+          npm install -g @jakepartusch/lumberjack@0.2.0
           xvfb-run --auto-servernum lumberjack --url https://jake.partus.ch
