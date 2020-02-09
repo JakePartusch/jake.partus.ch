@@ -41,7 +41,3 @@ jobs:
         with:
           url: ${{ steps.waitFor200.outputs.url }}
           threshold: 90
-      - name: Accessibility Audits
-        run: |
-          npm install -g @jakepartusch/lumberjack
-          lumberjack --url ${{ steps.waitFor200.outputs.url }}
