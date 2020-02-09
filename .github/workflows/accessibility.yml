@@ -26,5 +26,4 @@ jobs:
           max_timeout: 90
       - name: Accessibility Audits
         run: |
-          npm install -g @jakepartusch/lumberjack
-          lumberjack --url https://jake.partus.ch
+          npx @jakepartusch/lumberjack --url https://jake.partus.ch
