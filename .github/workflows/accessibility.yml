@@ -33,3 +33,5 @@ jobs:
         run: |
           npm install -g @jakepartusch/lumberjack
           xvfb-run --auto-servernum lumberjack --url ${{ steps.waitFor200.outputs.url }}
+          xvfb-run --auto-servernum lumberjack --url ${{ steps.waitFor200.outputs.url }} --baseUrlOnly --strict
+          xvfb-run --auto-servernum lumberjack --url ${{ steps.waitFor200.outputs.url }}/blog --baseUrlOnly --strict
