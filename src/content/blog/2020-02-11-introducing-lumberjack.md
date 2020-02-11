@@ -17,7 +17,7 @@ We can automatically find issues like:
 - Buttons and links without accessible text
 - Inputs without labels
 
-This is where automated tools can help to quickly find accessibility issues and prevent future regressions.
+Using automation, we can quickly find accessibility issues and prevent future regressions. can help to quickly find accessibility issues and prevent future regressions!
 
 ## Axe
 
