@@ -3,7 +3,7 @@ type: blog
 slug: introducing-lumberjack
 title: Introducing Lumberjack - an automated accessibility scanner
 publishDate: 2020-02-11
-reactions: 0
+reactions: 32
 ---
 
 https://github.com/JakePartusch/lumberjack
