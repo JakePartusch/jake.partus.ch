@@ -4,5 +4,5 @@ content: A suite of tools for fantasy football players. Built with React and ser
 siteLink: https://fantasytools.dev
 sourceLink: https://github.com/JakePartusch/fantasy-tools
 rank: 2
-stars: 33
+stars: 32
 ---
