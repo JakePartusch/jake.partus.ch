@@ -4,5 +4,5 @@ content: A GitHub action that utilizes Google's Page Speed Insights to generate 
 siteLink: https://github.com/marketplace/actions/page-speed-insights
 sourceLink: https://github.com/JakePartusch/psi-action
 rank: 3
-stars: 11
+stars: 12
 ---
